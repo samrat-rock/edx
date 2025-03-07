@@ -5,6 +5,7 @@ import { BsThreeDotsVertical } from "react-icons/bs";
 import { FaRegFilePdf, FaRegFileWord, FaRegFileAlt, FaRegFile } from "react-icons/fa";
 import { IoGrid } from "react-icons/io5";
 import { FaListUl } from "react-icons/fa";
+import { FaChevronDown } from "react-icons/fa";
 
 type FileType = "pdf" | "doc" | "txt";
 
@@ -41,46 +42,42 @@ export default function Page() {
 
   return (
     <section className="p-6 bg-gray-200">
-  
-    <div className="w-8xl mx-auto bg-white rounded-lg shadow-lg p-6" style={{ marginLeft: '16px' }}>
-      <div className="flex items-center justify-between mb-6">
-        <h3 className="font-bold text-lg">Your Documents</h3>
-        <div className="flex items-center justify-end gap-4">
-          <div className="flex rounded-lg overflow-hidden border">
+  <div className="lg:w-8xl mx-auto bg-white rounded-lg shadow-lg p-6" style={{ marginLeft: '16px' }}>
+
+    <div className="mb-6 space-y-4 lg:space-y-0 lg:flex lg:items-center lg:justify-between">
+      <h3 className="font-bold text-lg pl-5">Your Documents</h3>
+      <div className="space-y-4 lg:space-y-0 lg:flex lg:items-center lg:justify-end lg:gap-4">
+        <h4 className="flex items-center gap-2 pl-7">
+          Sort by Name: <FaChevronDown />
+        </h4>
+        <div className="flex rounded-lg overflow-hidden border">
       
-            <button
-              className={`px-4 py-1 ${
-                !isListView
-                  ? "bg-blue-500 text-white"
-                  : "bg-white text-black hover:bg-gray-100"
-              } transition-colors flex items-center gap-2`}
-              onClick={() => setIsListView(false)}
-            >
-              <IoGrid /> Grid View
-            </button>
-  
-            <button
-              className={`px-4 py-1 ${
-                isListView
-                  ? "bg-blue-500 text-white"
-                  : "bg-white text-black hover:bg-gray-100"
-              } transition-colors flex items-center gap-2`}
-              onClick={() => setIsListView(true)}
-            >
-              <FaListUl /> List View
-            </button>
-          </div>
-  
-        
-          <UploadButton />
+          <button
+            className={`px-4 py-1 ${
+              !isListView ? "bg-blue-500 text-white" : "bg-white text-black hover:bg-gray-100"
+            } transition-colors flex items-center gap-2`}
+            onClick={() => setIsListView(false)}
+          >
+            <IoGrid /> Grid View
+          </button>
+
+          <button
+            className={`px-4 py-1 ${
+              isListView ? "bg-blue-500 text-white" : "bg-white text-black hover:bg-gray-100"
+            } transition-colors flex items-center gap-2`}
+            onClick={() => setIsListView(true)}
+          >
+            <FaListUl /> List View
+          </button>
         </div>
+        <UploadButton />
       </div>
-  
-      {isListView ? (
-    
-        <div className=" rounded-lg overflow-hidden py-10">
+    </div>
+    {isListView ? (
+      <div className="rounded-lg overflow-hidden py-10">
+        <div className="overflow-x-auto">
           <table className="w-full text-left">
-            <thead className=" font-bold">
+            <thead className="font-bold">
               <tr>
                 <th className="py-3 px-4 text-left">File Name</th>
                 <th className="py-3 px-4 text-right">Size</th>
@@ -89,26 +86,31 @@ export default function Page() {
             </thead>
             <tbody>
               {documents.map((doc, index) => (
-                <tr key={index} className="border-b hover:bg-gray-50 transition-colors">
+                <tr
+                  key={index}
+                  className="border-b hover:bg-gray-50 transition-colors"
+                >
                   <td className="py-3 px-4 text-left font-medium flex items-center gap-2">
                     {getFileIcon(doc.type)}
                     {doc.name}
                   </td>
-                  <td className="py-3 px-4 text-right">12 MB</td> 
+                  <td className="py-3 px-4 text-right">12 MB</td>
                   <td className="py-3 px-4 text-right">2025-03-07</td>
                 </tr>
               ))}
             </tbody>
           </table>
         </div>
-      ) : (
-        
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 py-10">
+      </div>
+    ) : (
+      // Grid View
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 py-10">
         {documents.map((doc, index) => (
           <div
             key={index}
             className="relative flex flex-col h-56 w-full sm:w-64 rounded-lg shadow-lg bg-gray-200"
           >
+            {/* Header */}
             <div className="w-full py-3 px-4 flex items-center justify-between bg-gray-300 rounded-t-lg">
               <div className="flex items-center gap-2">
                 {getFileIcon(doc.type)}
@@ -120,14 +122,15 @@ export default function Page() {
                 <BsThreeDotsVertical size={18} />
               </button>
             </div>
+            {/* Content */}
             <div className="flex-1 bg-white m-4 rounded-lg"></div>
           </div>
         ))}
       </div>
-      
-      )}
-    </div>
-  </section>
+    )}
+  </div>
+</section>
+
   
   );
 }
