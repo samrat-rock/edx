@@ -3,6 +3,14 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import NavComponent from "./components/NavComponent/NavComponent";
 import Sidenavbar from "./components/SideNavbar/SideNavbar";
+import { Poppins } from "next/font/google"; 
+
+
+const poppins = Poppins({
+  weight: ["400", "600", "700"], 
+  subsets: ["latin"],
+  variable: "--font-poppins", 
+});
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,7 +34,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} ${poppins.variable} antialiased`}>
         <NavComponent />
         <div className="flex min-h-screen">
           <Sidenavbar/>

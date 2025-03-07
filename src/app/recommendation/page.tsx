@@ -19,7 +19,7 @@ const colleges = [
 ];
 
 function Page() {
-  const [viewMode, setViewMode] = useState<"grid" | "list">("grid"); // Manage the view mode state
+  const [viewMode, setViewMode] = useState<"grid" | "list">("grid"); 
 
   return (
     <>

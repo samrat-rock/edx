@@ -24,3 +24,23 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+
+@keyframes heartbeat {
+  0% { transform: rotate(0); }
+  10% { transform: rotate(20deg); }
+  20% { transform: rotate(-18deg); }
+  30% { transform: rotate(16deg); }
+  40% { transform: rotate(-14deg); }
+  50% { transform: rotate(12deg); }
+  60% { transform: rotate(-10deg); }
+  70% { transform: rotate(8deg); }
+  80% { transform: rotate(-6deg); }
+  90% { transform: rotate(4deg); }
+  100% { transform: rotate(0); }
+}
+
+.animate-heartbeat:hover {
+  animation: heartbeat 2s ease-in-out;
+  transform-origin: 50% 50%; 
+}
