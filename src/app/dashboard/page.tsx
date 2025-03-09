@@ -30,7 +30,7 @@ function Dashboard() {
       <div className='py-5'>
         <Cards />
 
-        <div className='pl-20  '>
+        <div className='lg:pl-20  '>
          <div className='bg-white m-10 lg:w-7xl rounded-xl'>
          <div className='p-6'>
           <div className='flex justify-between items-center'>
@@ -66,21 +66,21 @@ function Dashboard() {
           </div>
           
          <div className='lg:flex gap-10 lg:pb-10'>
-         <div className='lg:px-20 '>
+         <div className='lg:px-20 px-10 '>
             <h3 className='font-bold pb-2 text-2xl '>Accepted Application</h3>
             <span className=''>
               <p >Kantipur Collage</p>
             <p>St.Xavier Collage</p>
             </span>
           </div>
-          <div className='lg:px-20 py-10 lg:py-0 '>
+          <div className='lg:px-20 py-10 lg:py-0 px-10 '>
             <h3 className='font-bold pb-2  text-2xl '>Rejected Application</h3>
             <span className=''>
               <p >Kantipur Collage</p>
             <p>St.Xavier Collage</p>
             </span>
           </div>
-          <div className='lg:px-20 '>
+          <div className='lg:px-20 px-10 '>
             <h3 className='font-bold pb-2 text-2xl  '>Pending Application</h3>
             <span className=''>
               <p >Kantipur Collage</p>

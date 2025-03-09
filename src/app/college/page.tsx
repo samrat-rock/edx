@@ -27,13 +27,13 @@ function Page() {
         <div className="lg:pl-20">
           <h3 className="lg:text-5xl text-2xl lg:bg-white pl-4 py-3">Choose your Future College</h3>
         </div>
-        <div className="py-4 lg:flex gap-3 items-center lg:pl-20">
+        <div className="py-4 lg:flex gap-3 items-center justify-between lg:px-20">
           <SearchButton />
           <div className="flex items-center gap-10 justify-center lg:justify-start">
-            <p className="font-bold flex items-center gap-2 py-3 text-2xl lg:text-base">
+            <p className="font-bold flex items-center gap-2 py-3  text-2xl lg:text-base">
               Sort by: Name <FaAngleDown />
             </p>
-            <GridButton setViewMode={setViewMode} /> {/* Pass setViewMode here */}
+            <GridButton setViewMode={setViewMode} /> 
           </div>
         </div>
         <div className="flex flex-col items-center text-center lg:flex-row lg:justify-between lg:items-center mb-4 px-20">
