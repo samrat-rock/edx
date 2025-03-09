@@ -5,16 +5,16 @@ import React from 'react';
 
 function Navbar() {
   return (
-    <nav className="hidden md:flex justify-between items-center px-20 py-4 bg-white border-b border-gray-200">
+    <nav className="hidden md:flex justify-between items-center px-10 py-4 bg-white border-b border-gray-200">
       <div>
-        <Image src="/EDlogo.png" alt='logo' height={100} width={200} />
+        <Image src="/EDlogo.png" alt='logo' height={100} width={100} />
       </div>
       <div className="flex items-center gap-8">
         <div className="bg-[#F6F6F6] rounded-full p-4">
-          <FaRegBell className="text-3xl cursor-pointer animate-ring" />
+          <FaRegBell className="text-xl cursor-pointer animate-ring" />
         </div>
         <div className="bg-[#F6F6F6] rounded-full p-4">
-          <GiEgyptianProfile className="text-3xl cursor-pointer bg-[#F6F6F6]" />
+          <GiEgyptianProfile className="text-xl cursor-pointer bg-[#F6F6F6]" />
         </div>
       </div>
     </nav>

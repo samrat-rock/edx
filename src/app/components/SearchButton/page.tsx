@@ -4,7 +4,7 @@ import { CiSearch } from 'react-icons/ci';
 
 function SearchButton() {
   return (
-    <div className="flex items-center border border-gray-400 rounded-lg px-4 py-1 w-full lg:w-3xl max-w-5xl">
+    <div className="flex items-center border border-gray-400 rounded-lg px-4 py-1 w-full lg:w-2xl max-w-3xl">
       <span className="text-4xl"><CiSearch /></span>
       <input
         type="text"

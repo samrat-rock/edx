@@ -24,8 +24,8 @@ function Page() {
     <>
       <section className="bg-gray-200">
         
-        <div className="py-4 lg:flex gap-3 items-center justify-between lg:pl-20">
-        <h3 className="lg:text-5xl text-4xl  text-center py-3">Explore top collage picks</h3>
+        <div className="py-4 lg:flex gap-3 items-center justify-between lg:pl-10">
+        <h3 className="text-3xl text-center  py-3">Explore top collage picks</h3>
           <div className="flex items-center gap-10 justify-center lg:justify-start lg:px-14">
             <p className="font-bold flex items-center gap-2 py-3 text-2xl lg:text-base lg:px-20 ">
               Sort by: Name <FaAngleDown  />
@@ -33,12 +33,12 @@ function Page() {
             <GridButton setViewMode={setViewMode} /> 
           </div>
         </div>
-        <div className="flex flex-col items-center text-center lg:flex-row lg:justify-between lg:items-center mb-4 lg:px-20">
+        <div className="flex flex-col items-center text-center lg:flex-row lg:justify-between lg:items-center mb-4 lg:px-10">
           <h2 className="lg:text-xl text-2xl font-bold mb-2 lg:mb-0">Recommended collage</h2>
           <a href="#" className="text-blue-500 hover:underline font-bold lg:text-xl text-2xl ">View all</a>
         </div>
 
-        <div className={`${viewMode === "grid" ? "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4" : "flex flex-col gap-6"} lg:px-20`}>
+        <div className={`${viewMode === "grid" ? "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4" : "flex flex-col gap-6"} lg:px-10`}>
           {colleges.map((college, index) => (
             <div key={index} className="bg-white shadow-md rounded-lg overflow-hidden flex-grow">
               <div className="relative">

@@ -19,7 +19,7 @@ const colleges = [
 ];
 
 function Page() {
-  const [viewMode, setViewMode] = useState<"grid" | "list">("grid"); // Manage the view mode state
+  const [viewMode, setViewMode] = useState<"grid" | "list">("grid"); 
 
   return (
     <>
@@ -27,10 +27,12 @@ function Page() {
         <div className="lg:pl-20">
           <h3 className="lg:text-5xl text-2xl lg:bg-white pl-4 py-3">Choose your Future College</h3>
         </div>
-        <div className="py-4 lg:flex gap-3 items-center justify-between lg:px-20">
-          <SearchButton />
+        <div className="py-4 lg:flex   items-center justify-between lg:px-10">
+         <div className="px-10">
+         <SearchButton />
+         </div>
           <div className="flex items-center gap-10 justify-center lg:justify-start">
-            <p className="font-bold flex items-center gap-2 py-3  text-2xl lg:text-base">
+            <p className=" flex items-center  py-3 text-2xl lg:text-base">
               Sort by: Name <FaAngleDown />
             </p>
             <GridButton setViewMode={setViewMode} /> 
@@ -41,7 +43,7 @@ function Page() {
           <a href="#" className="text-blue-500 hover:underline font-bold">View all</a>
         </div>
 
-        <div className={`${viewMode === "grid" ? "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4" : "flex flex-col gap-6"} lg:px-20`}>
+        <div className={`${viewMode === "grid" ? "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4" : "flex flex-col gap-6"} lg:px-20 px-5`}>
           {colleges.map((college, index) => (
             <div key={index} className="bg-white shadow-md rounded-lg overflow-hidden flex-grow">
               <div className="relative">

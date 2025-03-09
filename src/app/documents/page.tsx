@@ -40,12 +40,12 @@ export default function Page() {
   const [isListView, setIsListView] = useState(false);
 
   return (
-    <section className="p-6 bg-gray-200">
+    <section className="pr-4 py-2 bg-gray-200">
       <div className="lg:w-8xl mx-auto bg-white rounded-lg shadow-lg p-6" style={{ marginLeft: '16px' }}>
         <div className="mb-6 space-y-4 lg:space-y-0 lg:flex lg:items-center lg:justify-between">
           <h3 className="font-bold text-lg lg:pl-5 text-center">Your Documents</h3>
           <div className="space-y-4 lg:space-y-0 lg:flex lg:items-center lg:justify-end lg:gap-4">
-            <h4 className="flex items-center gap-2 pl-10">
+            <h4 className="flex items-center gap-2 pl-20">
               Sort by Name: <FaChevronDown />
             </h4>
 

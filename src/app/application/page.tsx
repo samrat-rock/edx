@@ -93,12 +93,12 @@ const applications: Application[] = [
     date: "Jan 5, 2022",
     status: "Pending",
   },
-];
+];   
 
 function Page() {
   return (
     <div className="p-5 bg-gray-100 flex justify-center items-center">
-      <div className="bg-white w-full max-w-9xl p-6 shadow-lg rounded-lg">
+      <div className="bg-white w-full shadow-lg rounded-lg pl-10 flex flex-col">
         <CollageNumber />
         <div className="lg:flex flex-wrap justify-between items-center gap-4 mt-6">
           <div className="flex gap-2 pb-5 px-4 sm:px-2 pl-10">
@@ -109,12 +109,13 @@ function Page() {
               <span className="text-2xl">+</span> Filter
             </button>
           </div>
-          <div className="lg:w-3xl w-60 ">
+          <div className="lg:w-3xl w-60 lg:pl-24 flex-grow">
             <SearchButton />
           </div>
         </div>
 
-        <div className="overflow-hidden lg:overflow-x-auto mt-6">
+        
+        <div className="overflow-hidden lg:overflow-x-auto mt-6 flex-grow">
           <table className="min-w-full bg-white shadow-md text-xs sm:text-sm border-collapse">
             <thead className="bg-gray-200 font-bold">
               <tr>
