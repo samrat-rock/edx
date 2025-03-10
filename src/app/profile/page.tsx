@@ -35,7 +35,9 @@ function ProfilePage() {
                 <GiEgyptianProfile className="text-9xl  text-black" />
               </div>
               <div className="lg:ml-4 lg:pt-20 text-center lg:text-left">
-                <h3 className="text-xl md:text-2xl font-bold">Birendra Bikram</h3>
+                <h3 className="text-xl md:text-2xl font-bold">
+                  Birendra Bikram
+                </h3>
                 <p>@birendra</p>
               </div>
             </div>
@@ -54,7 +56,10 @@ function ProfilePage() {
               <div className="lg:pt-30 pt-5">
                 <h3 className="font-bold text-2xl pb-5">Student Details</h3>
                 {studentDetails.map((detail, index) => (
-                  <p key={index} className="flex gap-3 items-center pt-5 text-base">
+                  <p
+                    key={index}
+                    className="flex gap-3 items-center pt-5 text-base"
+                  >
                     {detail.icon} {detail.label}
                   </p>
                 ))}
@@ -87,7 +92,9 @@ function ProfilePage() {
 
                 <div className="pt-8">
                   <div className="pt-5">
-                    <h3 className="Font-bold text-3xl pb-6 ">Currnet Academics</h3>
+                    <h3 className="Font-bold text-3xl pb-6 ">
+                      Currnet Academics
+                    </h3>
                     <p className="font-bold">Enrolled Collage</p>
                     <span>California State University, East Bay</span>
                   </div>

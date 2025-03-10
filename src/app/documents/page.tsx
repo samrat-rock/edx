@@ -1,9 +1,14 @@
-"use client"
+"use client";
 import React, { useState } from "react";
 import UploadButton from "../components/UplaodButton/page";
 import GridButton from "../components/gridbutton/GridButton";
 import { BsThreeDotsVertical } from "react-icons/bs";
-import { FaRegFilePdf, FaRegFileWord, FaRegFileAlt, FaRegFile } from "react-icons/fa";
+import {
+  FaRegFilePdf,
+  FaRegFileWord,
+  FaRegFileAlt,
+  FaRegFile,
+} from "react-icons/fa";
 import { FaChevronDown } from "react-icons/fa";
 
 type FileType = "pdf" | "doc" | "txt";
@@ -41,16 +46,24 @@ export default function Page() {
 
   return (
     <section className="pr-4 py-2 bg-gray-200">
-      <div className="lg:w-8xl mx-auto bg-white rounded-lg shadow-lg p-6" style={{ marginLeft: '16px' }}>
+      <div
+        className="lg:w-8xl mx-auto bg-white rounded-lg shadow-lg p-6"
+        style={{ marginLeft: "16px" }}
+      >
         <div className="mb-6 space-y-4 lg:space-y-0 lg:flex lg:items-center lg:justify-between">
-          <h3 className="font-bold text-lg lg:pl-5 text-center">Your Documents</h3>
+          <h3 className="font-bold text-lg lg:pl-5 text-center">
+            Your Documents
+          </h3>
           <div className="space-y-4 lg:space-y-0 lg:flex lg:items-center lg:justify-end lg:gap-4">
             <h4 className="flex items-center gap-2 pl-20">
               Sort by Name: <FaChevronDown />
             </h4>
 
-        
-            <GridButton setViewMode={(mode: "grid" | "list") => setIsListView(mode === "list")} />
+            <GridButton
+              setViewMode={(mode: "grid" | "list") =>
+                setIsListView(mode === "list")
+              }
+            />
 
             <UploadButton />
           </div>
@@ -69,7 +82,10 @@ export default function Page() {
                 </thead>
                 <tbody>
                   {documents.map((doc, index) => (
-                    <tr key={index} className="border-b border-gray-200 hover:bg-gray-50 transition-colors">
+                    <tr
+                      key={index}
+                      className="border-b border-gray-200 hover:bg-gray-50 transition-colors"
+                    >
                       <td className="py-2 px-4 text-left font-medium flex items-center gap-2">
                         {getFileIcon(doc.type)}
                         {doc.name}
@@ -85,11 +101,16 @@ export default function Page() {
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 py-10">
             {documents.map((doc, index) => (
-              <div key={index} className="relative flex flex-col h-56 w-full sm:w-64 rounded-lg shadow-lg bg-gray-200">
+              <div
+                key={index}
+                className="relative flex flex-col h-56 w-full sm:w-64 rounded-lg shadow-lg bg-gray-200"
+              >
                 <div className="w-full py-3 px-4 flex items-center justify-between rounded-t-lg">
                   <div className="flex items-center gap-2">
                     {getFileIcon(doc.type)}
-                    <p className="font-semibold text-sm truncate max-w-[140px]">{doc.name}</p>
+                    <p className="font-semibold text-sm truncate max-w-[140px]">
+                      {doc.name}
+                    </p>
                   </div>
                   <button className="text-gray-500 hover:text-black transition-colors">
                     <BsThreeDotsVertical size={18} />
