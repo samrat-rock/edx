@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import UploadButton from "../components/UplaodButton/page";
+import UploadButton from "../components/uplaodbutton/UplaodButton";
 import GridButton from "../components/gridbutton/GridButton";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import {
@@ -17,15 +17,12 @@ const documents = [
   { name: "certificate.pdf", type: "pdf" as FileType },
   { name: "letter.doc", type: "doc" as FileType },
   { name: "documents.txt", type: "txt" as FileType },
-  { name: "recommendation.pdf", type: "pdf" as FileType },
-  { name: "notes.txt", type: "txt" as FileType },
-  { name: "report.pdf", type: "pdf" as FileType },
-  { name: "document.doc", type: "doc" as FileType },
-  { name: "license.pdf", type: "pdf" as FileType },
-  { name: "readme.txt", type: "txt" as FileType },
-  { name: "manual.pdf", type: "pdf" as FileType },
-  { name: "draft.doc", type: "doc" as FileType },
-  { name: "instructions.txt", type: "txt" as FileType },
+  { name: "certificate.pdf", type: "pdf" as FileType },
+  { name: "letter.doc", type: "doc" as FileType },
+  { name: "documents.txt", type: "txt" as FileType },
+  { name: "certificate.pdf", type: "pdf" as FileType },
+  { name: "letter.doc", type: "doc" as FileType },
+  { name: "documents.txt", type: "txt" as FileType },
 ];
 
 const getFileIcon = (type: FileType) => {
@@ -43,6 +40,7 @@ const getFileIcon = (type: FileType) => {
 
 export default function Page() {
   const [isListView, setIsListView] = useState(false);
+  const [isUploadView, setIsUploadView] = useState(false);
 
   return (
     <section className="pr-4 py-2 bg-gray-200">
@@ -52,7 +50,7 @@ export default function Page() {
       >
         <div className="mb-6 space-y-4 lg:space-y-0 lg:flex lg:items-center lg:justify-between">
           <h3 className="font-bold text-lg lg:pl-5 text-center">
-            Your Documents
+            {isUploadView ? "Upload Your Files" : "Your Documents"}
           </h3>
           <div className="space-y-4 lg:space-y-0 lg:flex lg:items-center lg:justify-end lg:gap-4">
             <h4 className="flex items-center gap-2 pl-20">
@@ -65,11 +63,46 @@ export default function Page() {
               }
             />
 
-            <UploadButton />
+        
+            <UploadButton onClick={() => setIsUploadView((prev) => !prev)} />
           </div>
         </div>
 
-        {isListView ? (
+        {isUploadView ? (
+          
+          <div className="bg-white rounded-lg shadow-lg p-6">
+          
+          <div className="flex justify-between w-full mb-4 border-b pb-2">
+            <h4 className="text-gray-700 font-semibold text-left w-1/3">File Name</h4>
+            <div className="flex gap-16 text-gray-700 font-semibold text-right">
+              <h4>Size</h4>
+              <h4>Uploaded On</h4>
+            </div>
+          </div>
+        
+          
+          <div className="border-dashed border-4 border-gray-400 w-full flex flex-col items-center justify-center 
+                      p-10 rounded-lg bg-white h-[600px] text-center">
+            <p className="text-lg text-gray-700 mb-5">Drag files here</p>
+            <p>or</p>
+        
+            
+            <input type="file" id="+ upload file" className="hidden" />
+        
+            
+            <label
+              htmlFor="fileUpload"
+              className="px-6 py-3 border border-blue-400 text-blue-700 rounded-lg shadow-lg cursor-pointer"
+            >
+              + uplaod files
+            </label>
+          </div>
+        </div>
+        
+        
+        
+        ) : isListView ? (
+        
           <div className="rounded-lg overflow-hidden py-10">
             <div className="overflow-x-auto">
               <table className="w-full text-left border-collapse">
@@ -99,6 +132,7 @@ export default function Page() {
             </div>
           </div>
         ) : (
+          
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 py-10">
             {documents.map((doc, index) => (
               <div

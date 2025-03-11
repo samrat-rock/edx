@@ -5,7 +5,6 @@ import Image from "next/image";
 import { CiHeart } from "react-icons/ci";
 import Modal from "../components/modal/Modal";
 
-
 const colleges = [
   { name: "Boston", location: "Kamal Pokhari, Kathmandu", image: "/BostonCollege.jpg" },
   { name: "ABC College", location: "New Baneshwor, Kathmandu", image: "/BostonCollege.jpg" },
@@ -28,7 +27,7 @@ function Dashboard() {
         <div className="bg-white m-10 rounded-xl flex-grow flex flex-col">
           <div className="p-6">
             <div className="w-full flex py-5">
-              <h3 className="font-bold text-xl text-center pl-8 lg:pl-32">You&apos;ve applied to</h3>
+              <h3 className="font-bold text-xl text-center pl-8 lg:pl-32">Youve applied to</h3>
             </div>
             <div className="lg:flex flex-grow">
               <div className="text-center flex-grow">
@@ -54,10 +53,10 @@ function Dashboard() {
         </div>
       </div>
 
-      {/* Modal Trigger Button */}
-     
+    
+    
 
-      {/* Favorite Colleges Section */}
+  
       <div className="lg:pl-10 flex-grow">
         <div className="text-center lg:text-left lg:pr-10">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 flex-grow px-10 lg:px-0">
@@ -78,14 +77,14 @@ function Dashboard() {
           </div>
         </div>
       </div>
-
-    
-      <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+     
       <div className="text-center py-5">
         <button onClick={() => setIsModalOpen(true)} className="px-6 py-3 bg-blue-600 text-white rounded-lg shadow-lg">
           Choose Preferences
         </button>
       </div>
+  
+      <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </section>
   );
 }
