@@ -9,15 +9,15 @@ interface GridButtonProps {
 
 const GridButton: React.FC<GridButtonProps> = ({ setViewMode }) => {
   return (
-    <div className="lg:flex lg:items-center border border-gray-300 rounded-lg gap-2 hidden">
+    <div className="lg:flex lg:items-center rounded-lg gap-2 hidden">
       <button
-        className="flex items-center gap-2 px-4 py-2 bg-[#007296] text-white border-r border-gray-300 rounded-l-lg"
+        className="flex items-center gap-2 px-4 py-1 bg-[#007296] text-white border-r border-gray-300 rounded-l-lg"
         onClick={() => setViewMode("grid")} 
       >
         <IoGrid /> Grid
       </button>
       <button
-        className="flex items-center gap-2 px-4 py-2 hover:bg-gray-200 rounded-r-lg"
+        className="flex items-center gap-2 px-4 py-1 hover:bg-gray-200 rounded-r-lg"
         onClick={() => setViewMode("list")} 
       >
         <FaListUl /> List

@@ -23,6 +23,9 @@ const documents = [
   { name: "certificate.pdf", type: "pdf" as FileType },
   { name: "letter.doc", type: "doc" as FileType },
   { name: "documents.txt", type: "txt" as FileType },
+  { name: "certificate.pdf", type: "pdf" as FileType },
+  { name: "letter.doc", type: "doc" as FileType },
+  { name: "documents.txt", type: "txt" as FileType },
 ];
 
 const getFileIcon = (type: FileType) => {
@@ -63,46 +66,42 @@ export default function Page() {
               }
             />
 
-        
             <UploadButton onClick={() => setIsUploadView((prev) => !prev)} />
           </div>
         </div>
 
         {isUploadView ? (
-          
-          <div className="bg-white rounded-lg shadow-lg p-6">
-          
-          <div className="flex justify-between w-full mb-4 border-b pb-2">
-            <h4 className="text-gray-700 font-semibold text-left w-1/3">File Name</h4>
-            <div className="flex gap-16 text-gray-700 font-semibold text-right">
-              <h4>Size</h4>
-              <h4>Uploaded On</h4>
+          <div className="bg-white rounded-lg  p-6">
+            <div className="flex justify-between w-full mb-4 border-b border-gray-200 pb-2">
+              <h4 className="text-gray-700 font-semibold text-left w-1/3">
+                File Name
+              </h4>
+              <div className="flex gap-16 text-gray-700 font-semibold text-right">
+                <h4>Size</h4>
+                <h4>Uploaded On</h4>
+              </div>
+            </div>
+
+            <div
+              className="border-dashed border border-blue-400 w-full flex flex-col items-center justify-center 
+                      p-10 rounded-lg bg-white h-[600px] text-center"
+            >
+              <p className="text-lg text-gray-700 mb-5 font-bold">
+                Drag files here
+              </p>
+              <p>or</p>
+
+              <input type="file" id="+ upload file" className="hidden" />
+
+              <label
+                htmlFor="fileUpload"
+                className="px-6 py-3 border border-blue-400 text-blue-700 rounded-lg  cursor-pointer"
+              >
+                + uplaod files
+              </label>
             </div>
           </div>
-        
-          
-          <div className="border-dashed border-4 border-gray-400 w-full flex flex-col items-center justify-center 
-                      p-10 rounded-lg bg-white h-[600px] text-center">
-            <p className="text-lg text-gray-700 mb-5">Drag files here</p>
-            <p>or</p>
-        
-            
-            <input type="file" id="+ upload file" className="hidden" />
-        
-            
-            <label
-              htmlFor="fileUpload"
-              className="px-6 py-3 border border-blue-400 text-blue-700 rounded-lg shadow-lg cursor-pointer"
-            >
-              + uplaod files
-            </label>
-          </div>
-        </div>
-        
-        
-        
         ) : isListView ? (
-        
           <div className="rounded-lg overflow-hidden py-10">
             <div className="overflow-x-auto">
               <table className="w-full text-left border-collapse">
@@ -132,7 +131,6 @@ export default function Page() {
             </div>
           </div>
         ) : (
-          
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 py-10">
             {documents.map((doc, index) => (
               <div

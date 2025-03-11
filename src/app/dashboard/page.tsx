@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useState } from "react";
 import Cards from "../components/cards/cards";
 import Image from "next/image";
@@ -6,14 +6,46 @@ import { CiHeart } from "react-icons/ci";
 import Modal from "../components/modal/Modal";
 
 const colleges = [
-  { name: "Boston", location: "Kamal Pokhari, Kathmandu", image: "/BostonCollege.jpg" },
-  { name: "ABC College", location: "New Baneshwor, Kathmandu", image: "/BostonCollege.jpg" },
-  { name: "XYZ University", location: "Pulchowk, Lalitpur", image: "/BostonCollege.jpg" },
-  { name: "PQR Institute", location: "Kirtipur, Kathmandu", image: "/BostonCollege.jpg" },
-  { name: "LMN Academy", location: "Maitighar, Kathmandu", image: "/BostonCollege.jpg" },
-  { name: "UVW College", location: "Dillibazar, Kathmandu", image: "/BostonCollege.jpg" },
-  { name: "RST University", location: "Thamel, Kathmandu", image: "/BostonCollege.jpg" },
-  { name: "OPQ College", location: "Boudha, Kathmandu", image: "/BostonCollege.jpg" },
+  {
+    name: "Boston",
+    location: "Kamal Pokhari, Kathmandu",
+    image: "/BostonCollege.jpg",
+  },
+  {
+    name: "ABC College",
+    location: "New Baneshwor, Kathmandu",
+    image: "/BostonCollege.jpg",
+  },
+  {
+    name: "XYZ University",
+    location: "Pulchowk, Lalitpur",
+    image: "/BostonCollege.jpg",
+  },
+  {
+    name: "PQR Institute",
+    location: "Kirtipur, Kathmandu",
+    image: "/BostonCollege.jpg",
+  },
+  {
+    name: "LMN Academy",
+    location: "Maitighar, Kathmandu",
+    image: "/BostonCollege.jpg",
+  },
+  {
+    name: "UVW College",
+    location: "Dillibazar, Kathmandu",
+    image: "/BostonCollege.jpg",
+  },
+  {
+    name: "RST University",
+    location: "Thamel, Kathmandu",
+    image: "/BostonCollege.jpg",
+  },
+  {
+    name: "OPQ College",
+    location: "Boudha, Kathmandu",
+    image: "/BostonCollege.jpg",
+  },
 ];
 
 function Dashboard() {
@@ -27,11 +59,15 @@ function Dashboard() {
         <div className="bg-white m-10 rounded-xl flex-grow flex flex-col">
           <div className="p-6">
             <div className="w-full flex py-5">
-              <h3 className="font-bold text-xl text-center pl-8 lg:pl-32">Youve applied to</h3>
+              <h3 className="font-bold text-xl text-center pl-8 lg:pl-32">
+                Youve applied to
+              </h3>
             </div>
             <div className="lg:flex flex-grow">
               <div className="text-center flex-grow">
-                <h3 className="text-8xl font-bold text-[#007296] leading-none pb-2">24</h3>
+                <h3 className="text-8xl font-bold text-[#007296] leading-none pb-2">
+                  24
+                </h3>
                 <p className="text-xl pb-6">Colleges</p>
               </div>
               <div className="lg:flex gap-5 flex-grow p-4">
@@ -53,17 +89,22 @@ function Dashboard() {
         </div>
       </div>
 
-    
-    
-
-  
       <div className="lg:pl-10 flex-grow">
         <div className="text-center lg:text-left lg:pr-10">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 flex-grow px-10 lg:px-0">
             {colleges.map((college, index) => (
-              <div key={index} className="bg-white shadow-md rounded-lg overflow-hidden flex flex-col flex-grow">
+              <div
+                key={index}
+                className="bg-white shadow-md rounded-lg overflow-hidden flex flex-col flex-grow"
+              >
                 <div className="relative">
-                  <Image src={college.image} alt={college.name} className="w-full h-40 object-cover" height={100} width={300} />
+                  <Image
+                    src={college.image}
+                    alt={college.name}
+                    className="w-full h-40 object-cover"
+                    height={100}
+                    width={300}
+                  />
                   <button className="absolute top-2 right-2 bg-[#007296] p-2 rounded-full shadow">
                     <CiHeart className="text-white" />
                   </button>
@@ -77,13 +118,16 @@ function Dashboard() {
           </div>
         </div>
       </div>
-     
+
       <div className="text-center py-5">
-        <button onClick={() => setIsModalOpen(true)} className="px-6 py-3 bg-blue-600 text-white rounded-lg shadow-lg">
+        <button
+          onClick={() => setIsModalOpen(true)}
+          className="px-6 py-3 bg-blue-600 text-white rounded-lg shadow-lg"
+        >
           Choose Preferences
         </button>
       </div>
-  
+
       <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </section>
   );

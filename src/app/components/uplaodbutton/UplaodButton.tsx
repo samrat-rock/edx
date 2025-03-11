@@ -11,7 +11,7 @@ function UploadButton({ onClick }: UploadButtonProps) {
     <div className="flex justify-center items-center">
       <button
         onClick={onClick}
-        className="flex items-center justify-center gap-2 px-3 py-1 bg-white text-[#007296] text-sm border-2 border-dotted border-gray-400 rounded-md hover:bg-gray-100 transition-colors w-28 h-8"
+        className="flex items-center justify-center gap-2 px-2 py-1 bg-[#007296] text-white text-sm border   rounded-md w-28 h-8"
       >
         + Upload file
       </button>
