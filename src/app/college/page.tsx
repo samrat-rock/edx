@@ -1,126 +1,135 @@
 "use client";
 
 import React, { useState } from "react";
-import { FaAngleDown } from "react-icons/fa6";
+import Link from "next/link";
 import Image from "next/image";
+import { FaAngleDown } from "react-icons/fa6";
 import { CiHeart } from "react-icons/ci";
 import GridButton from "../components/gridbutton/GridButton";
 import SearchButton from "../components/SearchButton/SearchButton";
 
 const colleges = [
   { 
+    id: "boston-1",
     name: "Boston", 
     location: "Kamal Pokhari, Kathmandu", 
     image: "/BostonCollege.jpg", 
     details: ["Public", "65% Graduation rate", "01-5970012"]
   },
   { 
+    id: "abc-1",
     name: "ABC College", 
     location: "New Baneshwor, Kathmandu", 
     image: "/BostonCollege.jpg", 
     details: ["Private", "75% Graduation rate", "01-4467890"]
   },
   { 
-    name: "XYZ University", 
-    location: "Pulchowk, Lalitpur", 
+    id: "boston-1",
+    name: "Boston", 
+    location: "Kamal Pokhari, Kathmandu", 
     image: "/BostonCollege.jpg", 
-    details: ["Public", "80% Graduation rate", "01-5534210"]
+    details: ["Public", "65% Graduation rate", "01-5970012"]
   },
   { 
-    name: "PQR Institute", 
-    location: "Kirtipur, Kathmandu", 
+    id: "abc-1",
+    name: "ABC College", 
+    location: "New Baneshwor, Kathmandu", 
     image: "/BostonCollege.jpg", 
-    details: ["Private", "70% Graduation rate", "01-4378912"]
+    details: ["Private", "75% Graduation rate", "01-4467890"]
   },
   { 
-    name: "LMN Academy", 
-    location: "Maitighar, Kathmandu", 
+    id: "boston-1",
+    name: "Boston", 
+    location: "Kamal Pokhari, Kathmandu", 
     image: "/BostonCollege.jpg", 
-    details: ["Public", "68% Graduation rate", "01-4750123"]
+    details: ["Public", "65% Graduation rate", "01-5970012"]
   },
   { 
-    name: "UVW College", 
-    location: "Dillibazar, Kathmandu", 
+    id: "abc-1",
+    name: "ABC College", 
+    location: "New Baneshwor, Kathmandu", 
     image: "/BostonCollege.jpg", 
-    details: ["Private", "72% Graduation rate", "01-4423345"]
+    details: ["Private", "75% Graduation rate", "01-4467890"]
   },
   { 
-    name: "RST University", 
-    location: "Thamel, Kathmandu", 
+    id: "boston-1",
+    name: "Boston", 
+    location: "Kamal Pokhari, Kathmandu", 
     image: "/BostonCollege.jpg", 
-    details: ["Public", "78% Graduation rate", "01-4356789"]
+    details: ["Public", "65% Graduation rate", "01-5970012"]
   },
   { 
-    name: "OPQ College", 
-    location: "Boudha, Kathmandu", 
+    id: "abc-1",
+    name: "ABC College", 
+    location: "New Baneshwor, Kathmandu", 
     image: "/BostonCollege.jpg", 
-    details: ["Private", "67% Graduation rate", "01-4890123"]
+    details: ["Private", "75% Graduation rate", "01-4467890"]
+  },
+  { 
+    id: "boston-1",
+    name: "Boston", 
+    location: "Kamal Pokhari, Kathmandu", 
+    image: "/BostonCollege.jpg", 
+    details: ["Public", "65% Graduation rate", "01-5970012"]
+  },
+  { 
+    id: "abc-1",
+    name: "ABC College", 
+    location: "New Baneshwor, Kathmandu", 
+    image: "/BostonCollege.jpg", 
+    details: ["Private", "75% Graduation rate", "01-4467890"]
   },
 ];
 
-function Page() {
-  const [viewMode, setViewMode] = useState<"grid" | "list">("grid"); 
-  const [searchQuery, setSearchQuery] = useState(""); // Added search state
+export default function CollegePage() {
+  const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
+  const [searchQuery, setSearchQuery] = useState("");
 
   return (
-    <>
-      <section className="bg-gray-200">
-        <div className="py-4 lg:flex gap-3 items-center justify-between lg:pl-10">
-          <h3 className="text-3xl text-center py-3">Explore top college picks</h3>
-          <div className="flex items-center gap-10 justify-center lg:justify-start lg:px-14">
-            <p className="font-bold flex items-center gap-2 py-3 text-2xl lg:text-base lg:px-20">
-              Sort by: Name <FaAngleDown />
-            </p>
-            <GridButton setViewMode={setViewMode} />
-          </div>
-         
+    <section className="bg-gray-200">
+      <div className="py-4 lg:flex gap-3 items-center justify-between lg:pl-10">
+        <h3 className="text-3xl text-center py-3">Explore top college picks</h3>
+        <div className="flex items-center gap-10 justify-center lg:justify-start lg:px-14">
+          <p className="font-bold flex items-center gap-2 py-3 text-2xl lg:text-base lg:px-20">
+            Sort by: Name <FaAngleDown />
+          </p>
+          <GridButton setViewMode={setViewMode} />
         </div>
-        <div className="pl-10"> <SearchButton searchQuery={searchQuery} setSearchQuery={setSearchQuery} /></div>
-        <div className="flex flex-col items-center text-center lg:flex-row lg:justify-between lg:items-center mb-4 lg:px-10">
-          <h2 className="lg:text-xl text-2xl font-bold mb-2 lg:mb-0">Recommended colleges</h2>
-          <a href="#" className="text-blue-500 hover:underline font-bold lg:text-xl text-2xl">View all</a>
-        </div>
+      </div>
 
-        <div className={`${viewMode === "grid" ? "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4" : "flex flex-col gap-6"} lg:px-10`}>
-          {colleges
-            .filter(college => college.name.toLowerCase().includes(searchQuery.toLowerCase())) // Filter by search query
-            .map((college, index) => (
-              <div key={index} className={`bg-white shadow-md rounded-lg overflow-hidden flex-grow ${viewMode === "list" ? "flex items-center p-4" : ""}`}>
-                {viewMode === "list" && (
-                  <div className="flex-grow p-4">
-                    <h3 className="font-bold text-lg">{college.name}</h3>
-                    <p className="text-black border-b border-gray-300 pb-2">{college.location}</p>
-                    <div className="mt-2">
-                      <p className="text-gray-700"><span className="font-semibold">Type:</span> {college.details[0]}</p>
-                      <p className="text-gray-700"><span className="font-semibold">Graduation Rate:</span> {college.details[1]}</p>
-                      <p className="text-gray-700"><span className="font-semibold">Contact:</span> {college.details[2]}</p>
-                    </div>
-                  </div>
-                )}
-                <div className="relative order-2">
-                  <Image
-                    src={college.image}
-                    alt={college.name}
-                    className={`w-full h-40 object-cover ${viewMode === "list" ? "w-40 h-40" : "lg:w-full"} rounded-lg`}
-                    height={100}
-                    width={300}
-                  />
-                  <button className="absolute top-2 right-2 bg-[#007296] p-2 rounded-full shadow">
-                    <CiHeart className="text-white animate-heartbeat" />
-                  </button>
+      <div className="pl-10">
+        <SearchButton searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
+      </div>
+
+      <div className="flex flex-col items-center text-center lg:flex-row lg:justify-between lg:items-center mb-4 lg:px-10">
+        <h2 className="lg:text-xl text-2xl font-bold mb-2 lg:mb-0">Recommended colleges</h2>
+        <a href="#" className="text-blue-500 hover:underline font-bold lg:text-xl text-2xl">View all</a>
+      </div>
+
+      <div className={`${viewMode === "grid" ? "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4" : "flex flex-col gap-6"} lg:px-10`}>
+        {colleges
+          .filter(college => college.name.toLowerCase().includes(searchQuery.toLowerCase()))
+          .map((college, index) => (
+            <Link href={`/college/${college.id}`} key={index}>
+              <div className={`bg-white shadow-md rounded-lg overflow-hidden flex-grow ${viewMode === "list" ? "flex items-center p-4" : ""}`}>
+                <Image 
+                  src={college.image} 
+                  alt={college.name} 
+                  className={`w-full h-40 object-cover ${viewMode === "list" ? "w-40 h-40" : "lg:w-full"} rounded-lg`} 
+                  height={100} 
+                  width={300} 
+                />
+                <button className="absolute top-2 right-2 bg-[#007296] p-2 rounded-full shadow">
+                  <CiHeart className="text-white animate-heartbeat" />
+                </button>
+                <div className="p-4">
+                  <h3 className="font-bold">{college.name}</h3>
+                  <p className="text-gray-600">{college.location}</p>
                 </div>
-                {viewMode === "grid" && (
-                  <div className="p-4">
-                    <h3 className="font-bold">{college.name}</h3>
-                    <p className="text-gray-600">{college.location}</p>
-                  </div>
-                )}
               </div>
-          ))}
-        </div>
-      </section>
-    </>
+            </Link>
+        ))}
+      </div>
+    </section>
   );
 }
-
-export default Page;
