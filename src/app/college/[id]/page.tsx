@@ -1,12 +1,13 @@
-"use client"
+"use client";
+import { useParams } from "next/navigation";
 import CollageComponents from '@/app/components/AboutCollage/collagecompoents/Page';
-import OfferedPrograms from '@/app/components/AboutCollage/OfferedPrograms/Page';
 import Image from 'next/image';
 import { useState } from 'react';
 
-export default function CollegePage({ params }: { params: { id: string } }) {
+export default function CollegePage() {
+  const params = useParams<{ id: string }>(); // Get dynamic route params
   const [activeSection, setActiveSection] = useState<string>('about');
-  
+
   const colleges = [
     {
       id: "boston-1",
@@ -23,7 +24,7 @@ export default function CollegePage({ params }: { params: { id: string } }) {
       details: ["Private", "75% Graduation rate", "01-4467890"]
     }
   ];
-  
+
   const college = colleges.find((c) => c.id === params.id);
 
   if (!college) {
@@ -55,7 +56,6 @@ export default function CollegePage({ params }: { params: { id: string } }) {
         </div>
       </div>
 
-      
       <section>
         <div className="lg:pt-16 pt-10 px-10 pb-10">
           <div className="lg:flex gap-40 text-center">
@@ -66,12 +66,6 @@ export default function CollegePage({ params }: { params: { id: string } }) {
               About
             </p>
             <p
-              className={`cursor-pointer px-4 ${activeSection === 'offeredPrograms' ? 'border-b-4 border-yellow-500 pb-2' : ''}`}
-              onClick={() => setActiveSection('offeredPrograms')}
-            >
-              Offered Programs
-            </p>
-            <p
               className={`cursor-pointer px-4 ${activeSection === 'admission' ? 'border-b-4 border-yellow-500 pb-2' : ''}`}
               onClick={() => setActiveSection('admission')}
             >
@@ -80,9 +74,8 @@ export default function CollegePage({ params }: { params: { id: string } }) {
           </div>
         </div>
 
-        
         {activeSection === "about" && <CollageComponents params={params} activeSection={activeSection} />}
-        {activeSection === "offeredPrograms" && <OfferedPrograms collegeId={params.id} />}
+        
         {activeSection === "admission" && <CollageComponents params={params} activeSection={activeSection} />}
       </section>
     </>

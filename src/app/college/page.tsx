@@ -22,63 +22,7 @@ const colleges = [
     location: "New Baneshwor, Kathmandu", 
     image: "/BostonCollege.jpg", 
     details: ["Private", "75% Graduation rate", "01-4467890"]
-  },
-  { 
-    id: "boston-1",
-    name: "Boston", 
-    location: "Kamal Pokhari, Kathmandu", 
-    image: "/BostonCollege.jpg", 
-    details: ["Public", "65% Graduation rate", "01-5970012"]
-  },
-  { 
-    id: "abc-1",
-    name: "ABC College", 
-    location: "New Baneshwor, Kathmandu", 
-    image: "/BostonCollege.jpg", 
-    details: ["Private", "75% Graduation rate", "01-4467890"]
-  },
-  { 
-    id: "boston-1",
-    name: "Boston", 
-    location: "Kamal Pokhari, Kathmandu", 
-    image: "/BostonCollege.jpg", 
-    details: ["Public", "65% Graduation rate", "01-5970012"]
-  },
-  { 
-    id: "abc-1",
-    name: "ABC College", 
-    location: "New Baneshwor, Kathmandu", 
-    image: "/BostonCollege.jpg", 
-    details: ["Private", "75% Graduation rate", "01-4467890"]
-  },
-  { 
-    id: "boston-1",
-    name: "Boston", 
-    location: "Kamal Pokhari, Kathmandu", 
-    image: "/BostonCollege.jpg", 
-    details: ["Public", "65% Graduation rate", "01-5970012"]
-  },
-  { 
-    id: "abc-1",
-    name: "ABC College", 
-    location: "New Baneshwor, Kathmandu", 
-    image: "/BostonCollege.jpg", 
-    details: ["Private", "75% Graduation rate", "01-4467890"]
-  },
-  { 
-    id: "boston-1",
-    name: "Boston", 
-    location: "Kamal Pokhari, Kathmandu", 
-    image: "/BostonCollege.jpg", 
-    details: ["Public", "65% Graduation rate", "01-5970012"]
-  },
-  { 
-    id: "abc-1",
-    name: "ABC College", 
-    location: "New Baneshwor, Kathmandu", 
-    image: "/BostonCollege.jpg", 
-    details: ["Private", "75% Graduation rate", "01-4467890"]
-  },
+  }
 ];
 
 export default function CollegePage() {
@@ -111,17 +55,19 @@ export default function CollegePage() {
           .filter(college => college.name.toLowerCase().includes(searchQuery.toLowerCase()))
           .map((college, index) => (
             <Link href={`/college/${college.id}`} key={index}>
-              <div className={`bg-white shadow-md rounded-lg overflow-hidden flex-grow ${viewMode === "list" ? "flex items-center p-4" : ""}`}>
-                <Image 
-                  src={college.image} 
-                  alt={college.name} 
-                  className={`w-full h-40 object-cover ${viewMode === "list" ? "w-40 h-40" : "lg:w-full"} rounded-lg`} 
-                  height={100} 
-                  width={300} 
-                />
-                <button className="absolute top-2 right-2 bg-[#007296] p-2 rounded-full shadow">
-                  <CiHeart className="text-white animate-heartbeat" />
-                </button>
+              <div className={`bg-white shadow-md rounded-lg overflow-hidden flex-grow relative ${viewMode === "list" ? "flex items-center p-4" : ""}`}>
+                <div className="relative">
+                  <Image 
+                    src={college.image} 
+                    alt={college.name} 
+                    className={`w-full h-40 object-cover ${viewMode === "list" ? "w-40 h-40" : "lg:w-full"} rounded-lg`} 
+                    height={100} 
+                    width={300} 
+                  />
+                  <button className="absolute top-2 right-2 bg-[#007296] p-2 rounded-full shadow">
+                    <CiHeart className="text-white animate-heartbeat" />
+                  </button>
+                </div>
                 <div className="p-4">
                   <h3 className="font-bold">{college.name}</h3>
                   <p className="text-gray-600">{college.location}</p>
