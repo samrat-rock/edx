@@ -8,6 +8,10 @@ import { BsTelephone } from "react-icons/bs";
 import { FaGraduationCap, } from "react-icons/fa";
 import { CiMail } from "react-icons/ci";
 import { MdErrorOutline } from "react-icons/md";
+import { CiFacebook } from "react-icons/ci";
+import { AiOutlineYoutube } from "react-icons/ai";
+import { FaInstagram } from "react-icons/fa";
+import { CiTwitter } from "react-icons/ci";
 
 const servicesArray = [
   { 
@@ -166,17 +170,17 @@ function CollageComponents({ activeSection }: CollageComponentsProps) {
             <div>
             <h3 className='lg:font-bold'>Social meida</h3>
             <div className='flex justify-between rounded-lg gap-2 py-3'>
-  <button className='bg-blue-500 text-white py-1 px-10 rounded-lg hover:bg-blue-600 transition-colors'>
-    Facebook
+  <button className='bg-blue-500 text-white py-1 px-10 rounded-lg hover:bg-blue-600 transition-colors flex items-center gap-2'>
+  <CiFacebook/>  Facebook
   </button>
-  <button className='bg-red-500 text-white py-1 px-10 rounded-lg hover:bg-red-600 transition-colors'>
-    Youtube
+  <button className='bg-red-500 text-white py-1 px-10 rounded-lg hover:bg-red-600 transition-colors flex items-center gap-2'>
+  <AiOutlineYoutube/>  Youtube
   </button>
-  <button className='bg-gradient-to-r from-blue-500 to-[#F7543B] text-white py-1 px-10 rounded-lg hover:opacity-90 transition-opacity'>
-    Instagram
+  <button className='bg-gradient-to-r from-blue-500 to-[#F7543B] text-white py-1 px-10 rounded-lg hover:opacity-90 transition-opacity flex items-center gap-2'>
+   <FaInstagram/> Instagram
   </button>
-  <button className='bg-[#1DA1F2] text-white py-1 px-10 rounded-lg hover:bg-[#1991db] transition-colors'>
-    Twitter
+  <button className='bg-[#1DA1F2] text-white py-1 px-10 rounded-lg hover:bg-[#1991db] transition-colors flex items-center gap-2'>
+  <CiTwitter/>  Twitter
   </button>
 </div>
             </div>

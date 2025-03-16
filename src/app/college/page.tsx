@@ -22,6 +22,74 @@ const colleges = [
     location: "New Baneshwor, Kathmandu", 
     image: "/BostonCollege.jpg", 
     details: ["Private", "75% Graduation rate", "01-4467890"]
+  },
+  { 
+    id: "boston-1",
+    name: "Boston", 
+    location: "Kamal Pokhari, Kathmandu", 
+    image: "/BostonCollege.jpg", 
+    details: ["Public", "65% Graduation rate", "01-5970012"]
+  },
+  { 
+    id: "abc-1",
+    name: "ABC College", 
+    location: "New Baneshwor, Kathmandu", 
+    image: "/BostonCollege.jpg", 
+    details: ["Private", "75% Graduation rate", "01-4467890"]
+  },
+  { 
+    id: "boston-1",
+    name: "Boston", 
+    location: "Kamal Pokhari, Kathmandu", 
+    image: "/BostonCollege.jpg", 
+    details: ["Public", "65% Graduation rate", "01-5970012"]
+  },
+  { 
+    id: "abc-1",
+    name: "ABC College", 
+    location: "New Baneshwor, Kathmandu", 
+    image: "/BostonCollege.jpg", 
+    details: ["Private", "75% Graduation rate", "01-4467890"]
+  },
+  { 
+    id: "boston-1",
+    name: "Boston", 
+    location: "Kamal Pokhari, Kathmandu", 
+    image: "/BostonCollege.jpg", 
+    details: ["Public", "65% Graduation rate", "01-5970012"]
+  },
+  { 
+    id: "abc-1",
+    name: "ABC College", 
+    location: "New Baneshwor, Kathmandu", 
+    image: "/BostonCollege.jpg", 
+    details: ["Private", "75% Graduation rate", "01-4467890"]
+  },{ 
+    id: "boston-1",
+    name: "Boston", 
+    location: "Kamal Pokhari, Kathmandu", 
+    image: "/BostonCollege.jpg", 
+    details: ["Public", "65% Graduation rate", "01-5970012"]
+  },
+  { 
+    id: "abc-1",
+    name: "ABC College", 
+    location: "New Baneshwor, Kathmandu", 
+    image: "/BostonCollege.jpg", 
+    details: ["Private", "75% Graduation rate", "01-4467890"]
+  },{ 
+    id: "boston-1",
+    name: "Boston", 
+    location: "Kamal Pokhari, Kathmandu", 
+    image: "/BostonCollege.jpg", 
+    details: ["Public", "65% Graduation rate", "01-5970012"]
+  },
+  { 
+    id: "abc-1",
+    name: "ABC College", 
+    location: "New Baneshwor, Kathmandu", 
+    image: "/BostonCollege.jpg", 
+    details: ["Private", "75% Graduation rate", "01-4467890"]
   }
 ];
 
