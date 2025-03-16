@@ -4,7 +4,7 @@ import { IoPersonCircleSharp } from "react-icons/io5";
 function Cards() {
   return (
     <section className="flex-grow flex flex-col w-full">
-      <div className="bg-white m-10 lg:h-40 flex-grow lg:flex items-center justify-between rounded-xl text-center lg:text-left py-5">
+      <div className="bg-white m-4 lg:h-40 flex-grow lg:flex items-center justify-between rounded-xl text-center lg:text-left py-5">
                                     
         <div className="text-6xl lg:pl-10 flex-grow flex items-center justify-center lg:justify-start">
           <IoPersonCircleSharp />

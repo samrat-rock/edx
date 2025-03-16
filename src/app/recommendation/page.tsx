@@ -62,9 +62,10 @@ function Page() {
 
   return (
     <>
-      <section className="bg-gray-200">
-        <div className="py-4 lg:flex gap-3 items-center justify-between lg:pl-10">
-          <h3 className="text-3xl text-center py-3">Explore top college picks</h3>
+      <section className="bg-gray-100 pt-4 px-4">
+      <div className="bg-white ">
+      <div className="py-4 lg:flex gap-3 items-center justify-between lg:pl-10">
+          <h3 className="text-5xl lg:text-3xl font-bold text-center py-3">Explore top college picks</h3>
           <div className="flex items-center gap-10 justify-center lg:justify-start lg:px-14">
             <p className="font-bold flex items-center gap-2 py-3 text-2xl lg:text-base lg:px-20 ">
               Sort by: Name <FaAngleDown />
@@ -106,10 +107,11 @@ function Page() {
                   <h3 className="font-bold">{college.name}</h3>
                   <p className="text-gray-600">{college.location}</p>
                 </div>
-              )}
+              )}  
             </div>
           ))}
         </div>
+      </div>
       </section>
     </>
   );

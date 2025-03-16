@@ -52,13 +52,13 @@ function ProfilePage() {
           </div>
 
           <div className="lg:flex">
-            <div className="lg:pl-20 lg:pb-10 flex-grow">
+            <div className="lg:pl-20 text-center lg:text-left lg:pb-10 flex-grow">
               <div className="lg:pt-30 pt-5">
                 <h3 className="font-bold text-2xl pb-5">Student Details</h3>
                 {studentDetails.map((detail, index) => (
                   <p
                     key={index}
-                    className="flex gap-3 items-center pt-5 text-base"
+                    className="flex gap-3 items-center pt-5 text-base pl-20 lg:pl-0"
                   >
                     {detail.icon} {detail.label}
                   </p>
@@ -67,7 +67,7 @@ function ProfilePage() {
 
               <div className="pt-5 ">
                 <h3 className="text-2xl font-bold pb-5">Student Preference</h3>
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2 pl-10 lg:pl-0">
                   {studentPreferences.map((preference, index) => (
                     <button
                       key={index}
@@ -82,7 +82,7 @@ function ProfilePage() {
 
             <div className="pt-20 lg:px-20 flex-grow">
               <div>
-                <div className="lg:flex grid-col-3 font-bold space-x-48">
+                <div className="lg:flex grid-col-3 font-bold lg:space-x-48 text-center">
                   <h3 className="font-bold border-b-4 border-yellow-600 lg:pb-5">
                     Academics
                   </h3>
@@ -90,7 +90,7 @@ function ProfilePage() {
                   <h3 className="font-bold text-xl opacity-50">Collections</h3>
                 </div>
 
-                <div className="pt-8">
+                <div className="pt-8 text-center lg:text-left">
                   <div className="pt-5">
                     <h3 className="Font-bold text-3xl pb-6 ">
                       Currnet Academics
@@ -111,7 +111,7 @@ function ProfilePage() {
                 </div>
 
                 <div>
-                  <div className="pt-3">
+                  <div className="pt-3 text-center lg:text-left">
                     <div className="pt-5">
                       <h3 className="Font-bold text-3xl pb-6 ">Test Score</h3>
                     </div>

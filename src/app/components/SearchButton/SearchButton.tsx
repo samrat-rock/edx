@@ -10,7 +10,7 @@ interface SearchButtonProps {
 
 const SearchButton: React.FC<SearchButtonProps> = ({ searchQuery, setSearchQuery }) => {
   return (
-    <div className="flex items-center border border-gray-400 rounded-lg px-4 w-full lg:w-4xl max-w-3xl bg-white shadow-sm">
+    <div className="flex items-center border border-gray-400 rounded-lg px-4 w-full lg:w-xl max-w-3xl bg-white shadow-sm">
       <CiSearch className="text-gray-600 text-2xl" />
       <input
         type="text"

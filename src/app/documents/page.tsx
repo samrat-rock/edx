@@ -46,9 +46,9 @@ export default function Page() {
   const [isUploadView, setIsUploadView] = useState(false);
 
   return (
-    <section className="pr-4 py-2 bg-gray-200">
+    <section className=" bg-gray-200">
       <div
-        className="lg:w-8xl mx-auto bg-white rounded-lg shadow-lg p-6"
+        className="lg:w-8xl mx-auto bg-white shadow-lg p-6"
         style={{ marginLeft: "16px" }}
       >
         <div className="mb-6 space-y-4 lg:space-y-0 lg:flex lg:items-center lg:justify-between">
@@ -56,7 +56,7 @@ export default function Page() {
             {isUploadView ? "Upload Your Files" : "Your Documents"}
           </h3>
           <div className="space-y-4 lg:space-y-0 lg:flex lg:items-center lg:justify-end lg:gap-4">
-            <h4 className="flex items-center gap-2 pl-20">
+            <h4 className="flex items-center text-xl gap-2 pl-20">
               Sort by Name: <FaChevronDown />
             </h4>
 
@@ -86,16 +86,16 @@ export default function Page() {
               className="border-dashed border border-blue-400 w-full flex flex-col items-center justify-center 
                       p-10 rounded-lg bg-white h-[600px] text-center"
             >
-              <p className="text-lg text-gray-700 mb-5 font-bold">
+              <p className="  font-bold">
                 Drag files here
               </p>
-              <p>or</p>
+              <p className="py-2">or</p>
 
               <input type="file" id="+ upload file" className="hidden" />
 
               <label
                 htmlFor="fileUpload"
-                className="px-6 py-3 border border-blue-400 text-blue-700 rounded-lg  cursor-pointer"
+                className="px-6 py-3 border border-[#007296] text-[#007296] rounded-lg  cursor-pointer"
               >
                 + uplaod files
               </label>

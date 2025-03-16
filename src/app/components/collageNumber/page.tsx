@@ -3,8 +3,8 @@ function CollageNumber() {
     <div className="lg:flex gap-5 lg:px-20 py-10 justify-center">
     
       <div className="flex flex-col lg:items-center lg:justify-center p-6 rounded-md px-10 flex-grow">
-        <span className="lg:text-6xl text-3xl pl-14 lg:pl-2 font-bold text-[#007296]">24</span>
-        <span className="text-[#007296] font-bold pl-2">Total Application</span>
+        <span className="lg:text-8xl text-3xl pl-14 lg:pl-2 font-bold text-[#007296]">24</span>
+        <span className="text-[#007296] text-xl font-bold pl-2">Total Application</span>
       </div>
 
       

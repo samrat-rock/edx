@@ -38,7 +38,7 @@ export default function RootLayout({
         <NavComponent />
         <div className="flex min-h-screen">
           <Sidenavbar/>
-          <main className="flex-1 lg:p-6 p-2 ">{children}</main>
+          <main className="flex-1">{children}</main>
         </div>
       </body>
     </html>

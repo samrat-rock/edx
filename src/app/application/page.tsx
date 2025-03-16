@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import CollageNumber from "../components/collageNumber/page";
 import SearchButton from "../components/SearchButton/SearchButton";
 import { CiFilter } from "react-icons/ci";
+import { TiTick } from "react-icons/ti";
 
 interface Application {
   id: string;
@@ -55,34 +56,86 @@ const applications: Application[] = [
     date: "Jan 5, 2022",
     status: "Pending",
   },
+  {
+    id: "#3062",
+    college: "Little Angels’ College",
+    address: "Lalitpur, Nepal",
+    course: "BBA (Marketing)",
+    date: "Jan 5, 2022",
+    status: "Pending",
+  },
+  {
+    id: "#3062",
+    college: "Little Angels’ College",
+    address: "Lalitpur, Nepal",
+    course: "BBA (Marketing)",
+    date: "Jan 5, 2022",
+    status: "Pending",
+  },
+  {
+    id: "#3062",
+    college: "Little Angels’ College",
+    address: "Lalitpur, Nepal",
+    course: "BBA (Marketing)",
+    date: "Jan 5, 2022",
+    status: "Pending",
+  },
+  {
+    id: "#3062",
+    college: "Little Angels’ College",
+    address: "Lalitpur, Nepal",
+    course: "BBA (Marketing)",
+    date: "Jan 5, 2022",
+    status: "Pending",
+  },
+  {
+    id: "#3062",
+    college: "Little Angels’ College",
+    address: "Lalitpur, Nepal",
+    course: "BBA (Marketing)",
+    date: "Jan 5, 2022",
+    status: "Pending",
+  },
+  {
+    id: "#3062",
+    college: "Little Angels’ College",
+    address: "Lalitpur, Nepal",
+    course: "BBA (Marketing)",
+    date: "Jan 5, 2022",
+    status: "Pending",
+  },
+  
 ];
 
 function Page() {
-  // ✅ Manage search query state
+
   const [searchQuery, setSearchQuery] = useState("");
 
   return (
-    <div className="p-5 bg-gray-100 flex justify-center items-center">
+    <div className="p-5 bg-gray-100 flex justify-center items-center px-4">
       <div className="bg-white w-full shadow-lg rounded-lg pl-10 flex flex-col">
         <CollageNumber />
 
-        {/* Filter and Search Section */}
+        
         <div className="lg:flex flex-wrap justify-between items-center gap-4 mt-6">
-          <div className="flex gap-2 pb-5 px-4 sm:px-2 pl-10">
-            <button className="p-2 rounded border border-gray-300 bg-gray-100 hover:bg-gray-200">
-              <CiFilter size={24} />
-            </button>
-            <button className="p-2 rounded bg-[#007296] text-white flex items-center gap-1 hover:bg-[#005a73]">
-              <span className="text-2xl">+</span> Filter
-            </button>
-          </div>
-          {/* ✅ Pass props to SearchButton */}
-          <div className="lg:w-3xl w-60 lg:pl-24 flex-grow">
-            <SearchButton searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
-          </div>
-        </div>
+  
+  <div className="flex gap-2 pb-5 px-4 sm:px-2">
+    <button className="p-2 rounded hover:bg-gray-200">
+      <CiFilter size={24} />
+    </button>
+    <button className="p-2 rounded flex items-center gap-1 hover:bg-[#005a73]">
+      <span className="text-2xl">+</span> Filter
+    </button>
+  </div>
 
-        {/* Applications Table */}
+  
+  <div className="px-10 flex-grow lg:flex justify-end">
+    <SearchButton searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
+  </div>
+</div>
+
+
+        
         <div className="overflow-hidden lg:overflow-x-auto mt-6 flex-grow">
           <table className="min-w-full bg-white shadow-md text-xs sm:text-sm border-collapse">
             <thead className="bg-gray-200 font-bold">
@@ -113,14 +166,19 @@ function Page() {
                   </td>
                   <td className="py-3 px-4 text-gray-400 whitespace-nowrap">{item.course}</td>
                   <td className="py-3 px-4 text-gray-400 whitespace-nowrap">{item.date}</td>
-                  <td className="py-3 px-4">
+                  <td className="py-3  ">
+                  
                     <span
-                      className={`px-3 py-1 rounded-full text-white text-xs ${
-                        item.status === "Approved" ? "bg-green-500" : "bg-gray-400"
+                      className={` py-1 rounded-full   text-[#027A48] text-xs ${
+                        item.status === "Approved" ? "bg-[#ECFDF3]" : "bg-[#ECFDF3]"
                       }`}
                     >
+                
+                      <TiTick/>
                       {item.status}
+                       
                     </span>
+                   
                   </td>
                   <td className="py-3 px-4 text-[#007296] font-bold cursor-pointer">
                     View Application
