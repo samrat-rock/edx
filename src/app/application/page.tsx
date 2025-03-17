@@ -4,111 +4,110 @@ import React, { useState } from "react";
 import CollageNumber from "../components/collageNumber/page";
 import SearchButton from "../components/SearchButton/SearchButton";
 import { CiFilter } from "react-icons/ci";
-import { TiTick } from "react-icons/ti";
+// import { TiTick } from "react-icons/ti";
 
-interface Application {
-  id: string;
-  college: string;
-  address: string;
-  course: string;
-  date: string;
-  status: "Approved" | "Pending";
-}
+// interface Application {
+//   id: string;
+//   college: string;
+//   address: string;
+//   course: string;
+//   date: string;
+//   status: "Approved" | "Pending";
+// }
 
-const applications: Application[] = [
-  {
-    id: "#3066",
-    college: "Islington College",
-    address: "Kathmandu, Nepal",
-    course: "Bsc.(Hons) Computing",
-    date: "Jan 6, 2022",
-    status: "Approved",
-  },
-  {
-    id: "#3065",
-    college: "CSU Chico",
-    address: "Chico, CA, USA",
-    course: "Multimedia",
-    date: "Jan 6, 2022",
-    status: "Approved",
-  },
-  {
-    id: "#3064",
-    college: "University of Texas Austin",
-    address: "Austin, TX, USA",
-    course: "Bsc.(Hons) Computing",
-    date: "Jan 6, 2022",
-    status: "Approved",
-  },
-  {
-    id: "#3063",
-    college: "London Met Uni",
-    address: "London, UK",
-    course: "ACCA",
-    date: "Jan 5, 2022",
-    status: "Approved",
-  },
-  {
-    id: "#3062",
-    college: "Little Angels’ College",
-    address: "Lalitpur, Nepal",
-    course: "BBA (Marketing)",
-    date: "Jan 5, 2022",
-    status: "Pending",
-  },
-  {
-    id: "#3062",
-    college: "Little Angels’ College",
-    address: "Lalitpur, Nepal",
-    course: "BBA (Marketing)",
-    date: "Jan 5, 2022",
-    status: "Pending",
-  },
-  {
-    id: "#3062",
-    college: "Little Angels’ College",
-    address: "Lalitpur, Nepal",
-    course: "BBA (Marketing)",
-    date: "Jan 5, 2022",
-    status: "Pending",
-  },
-  {
-    id: "#3062",
-    college: "Little Angels’ College",
-    address: "Lalitpur, Nepal",
-    course: "BBA (Marketing)",
-    date: "Jan 5, 2022",
-    status: "Pending",
-  },
-  {
-    id: "#3062",
-    college: "Little Angels’ College",
-    address: "Lalitpur, Nepal",
-    course: "BBA (Marketing)",
-    date: "Jan 5, 2022",
-    status: "Pending",
-  },
-  {
-    id: "#3062",
-    college: "Little Angels’ College",
-    address: "Lalitpur, Nepal",
-    course: "BBA (Marketing)",
-    date: "Jan 5, 2022",
-    status: "Pending",
-  },
-  {
-    id: "#3062",
-    college: "Little Angels’ College",
-    address: "Lalitpur, Nepal",
-    course: "BBA (Marketing)",
-    date: "Jan 5, 2022",
-    status: "Pending",
-  },
-  
-];
+// const applications: Application[] = [
+//   {
+//     id: "#3066",
+//     college: "Islington College",
+//     address: "Kathmandu, Nepal",
+//     course: "Bsc.(Hons) Computing",
+//     date: "Jan 6, 2022",
+//     status: "Approved",
+//   },
+//   {
+//     id: "#3065",
+//     college: "CSU Chico",
+//     address: "Chico, CA, USA",
+//     course: "Multimedia",
+//     date: "Jan 6, 2022",
+//     status: "Approved",
+//   },
+//   {
+//     id: "#3064",
+//     college: "University of Texas Austin",
+//     address: "Austin, TX, USA",
+//     course: "Bsc.(Hons) Computing",
+//     date: "Jan 6, 2022",
+//     status: "Approved",
+//   },
+//   {
+//     id: "#3063",
+//     college: "London Met Uni",
+//     address: "London, UK",
+//     course: "ACCA",
+//     date: "Jan 5, 2022",
+//     status: "Approved",
+//   },
+//   {
+//     id: "#3062",
+//     college: "Little Angels’ College",
+//     address: "Lalitpur, Nepal",
+//     course: "BBA (Marketing)",
+//     date: "Jan 5, 2022",
+//     status: "Pending",
+//   },
+//   {
+//     id: "#3062",
+//     college: "Little Angels’ College",
+//     address: "Lalitpur, Nepal",
+//     course: "BBA (Marketing)",
+//     date: "Jan 5, 2022",
+//     status: "Pending",
+//   },
+//   {
+//     id: "#3062",
+//     college: "Little Angels’ College",
+//     address: "Lalitpur, Nepal",
+//     course: "BBA (Marketing)",
+//     date: "Jan 5, 2022",
+//     status: "Pending",
+//   },
+//   {
+//     id: "#3062",
+//     college: "Little Angels’ College",
+//     address: "Lalitpur, Nepal",
+//     course: "BBA (Marketing)",
+//     date: "Jan 5, 2022",
+//     status: "Pending",
+//   },
+//   {
+//     id: "#3062",
+//     college: "Little Angels’ College",
+//     address: "Lalitpur, Nepal",
+//     course: "BBA (Marketing)",
+//     date: "Jan 5, 2022",
+//     status: "Pending",
+//   },
+//   {
+//     id: "#3062",
+//     college: "Little Angels’ College",
+//     address: "Lalitpur, Nepal",
+//     course: "BBA (Marketing)",
+//     date: "Jan 5, 2022",
+//     status: "Pending",
+//   },
+//   {
+//     id: "#3062",
+//     college: "Little Angels’ College",
+//     address: "Lalitpur, Nepal",
+//     course: "BBA (Marketing)",
+//     date: "Jan 5, 2022",
+//     status: "Pending",
+//   },
+
+// ];
 
 function Page() {
-
   const [searchQuery, setSearchQuery] = useState("");
 
   return (
@@ -116,27 +115,30 @@ function Page() {
       <div className="bg-white w-full shadow-lg rounded-lg pl-10 flex flex-col">
         <CollageNumber />
 
-        
-        <div className="lg:flex flex-wrap justify-between items-center gap-4 mt-6">
-  
-  <div className="flex gap-2 pb-5 px-4 sm:px-2">
-    <button className="p-2 rounded hover:bg-gray-200">
-      <CiFilter size={24} />
-    </button>
-    <button className="p-2 rounded flex items-center gap-1 hover:bg-[#005a73]">
-      <span className="text-2xl">+</span> Filter
-    </button>
-  </div>
-
-  
-  <div className="px-10 flex-grow lg:flex justify-end">
-    <SearchButton searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
-  </div>
-</div>
-
+        <div className=" lg:flex flex-wrap justify-between items-center gap-4 px-20 lg:px-0">
+          
+          <div className="flex gap-2   sm:px-2 flex-shrink-0 ">
+            <button className="rounded hover:bg-gray-200 p-1 pl-40 lg:pl-0 flex-shrink-0">
+              <CiFilter size={24} />
+            </button>
+            <button className="p-2 rounded flex items-center gap-1 hover:bg-[#005a73] flex-shrink-0">
+              <span className="text-2xl">+</span>
+              Filter
+            </button>
+          </div>
 
         
-        <div className="overflow-hidden lg:overflow-x-auto mt-6 flex-grow">
+          <div className="flex-grow flex-shrink min-w-0 px-4 lg:px-10 mt-4 lg:mt-0">
+            <div className="w-full max-w-[600px] lg:ml-auto">
+              <SearchButton
+                searchQuery={searchQuery}
+                setSearchQuery={setSearchQuery}
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* <div className="overflow-hidden lg:overflow-x-auto mt-6 flex-grow">
           <table className="min-w-full bg-white shadow-md text-xs sm:text-sm border-collapse">
             <thead className="bg-gray-200 font-bold">
               <tr>
@@ -187,7 +189,7 @@ function Page() {
               ))}
             </tbody>
           </table>
-        </div>
+        </div> */}
       </div>
     </div>
   );
