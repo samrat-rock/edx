@@ -55,8 +55,8 @@ export default function Page() {
           <h3 className="font-bold text-lg lg:pl-5 text-center">
             {isUploadView ? "Upload Your Files" : "Your Documents"}
           </h3>
-          <div className="space-y-4 lg:space-y-0 lg:flex lg:items-center lg:justify-end lg:gap-4">
-            <h4 className="flex items-center text-xl gap-2 pl-20">
+          <div className="space-y-4 lg:space-y-0 lg:flex lg:items-center lg:justify-end lg:gap-4 ">
+            <h4 className="flex items-center text-xl gap-2 justify-center ">
               Sort by Name: <FaChevronDown />
             </h4>
 
@@ -131,11 +131,11 @@ export default function Page() {
             </div>
           </div>
         ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 py-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 py-10">
             {documents.map((doc, index) => (
               <div
                 key={index}
-                className="relative flex flex-col h-56 w-full sm:w-64 rounded-lg shadow-lg bg-gray-200"
+                className="relative flex flex-col h-56 w-full rounded-lg shadow-lg bg-gray-200"
               >
                 <div className="w-full py-3 px-4 flex items-center justify-between rounded-t-lg">
                   <div className="flex items-center gap-2">

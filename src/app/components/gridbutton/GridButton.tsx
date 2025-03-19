@@ -24,7 +24,7 @@ const GridButton: React.FC<GridButtonProps> = ({ setViewMode }) => {
         }`}
         onClick={() => handleViewChange("grid")}
       >
-        <IoGrid /> Grid
+        <IoGrid/> Grid
       </button>
       <button
         className={`flex items-center gap-2 px-4 py-1 rounded-r-lg ${
