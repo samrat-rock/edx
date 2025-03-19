@@ -1,10 +1,14 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import { GiEgyptianProfile } from "react-icons/gi";
 import { IoAddSharp, IoLocationOutline } from "react-icons/io5";
 import { GoPencil } from "react-icons/go";
 import { CiMail } from "react-icons/ci";
 import { FaPhoneAlt, FaGraduationCap } from "react-icons/fa";
 import { RiSchoolLine } from "react-icons/ri";
+import { GoDotFill } from "react-icons/go";
+import Image from "next/image";
+import { CiHeart } from "react-icons/ci";
 
 const studentDetails = [
   { icon: <CiMail />, label: "longemallexample@email.com" },
@@ -14,6 +18,33 @@ const studentDetails = [
   { icon: <IoLocationOutline />, label: "Pembroke Pines, Florida" },
 ];
 
+const colleges = [
+  {
+    name: "Boston",
+    location: "Kamal Pokhari, Kathmandu",
+    image: "/BostonCollege.jpg",
+    details: ["Public", "65% Graduation rate", "01-5970012"],
+  },
+  {
+    name: "Boston",
+    location: "Kamal Pokhari, Kathmandu",
+    image: "/BostonCollege.jpg",
+    details: ["Public", "65% Graduation rate", "01-5970012"],
+  },
+  {
+    name: "Boston",
+    location: "Kamal Pokhari, Kathmandu",
+    image: "/BostonCollege.jpg",
+    details: ["Public", "65% Graduation rate", "01-5970012"],
+  },
+  {
+    name: "Boston",
+    location: "Kamal Pokhari, Kathmandu",
+    image: "/BostonCollege.jpg",
+    details: ["Public", "65% Graduation rate", "01-5970012"],
+  },
+  
+];
 const studentPreferences = [
   "Masters",
   "USA",
@@ -25,6 +56,146 @@ const studentPreferences = [
 ];
 
 function ProfilePage() {
+  const [activeTab, setActiveTab] = useState("academics");
+
+  const renderContent = () => {
+    switch (activeTab) {
+      case "academics":
+        return (
+          <div className="pt-8 text-center lg:text-left">
+            <div className="pt-5">
+              <h3 className="Font-bold text-3xl pb-6">Current Academics</h3>
+              <p className="font-bold">Enrolled College</p>
+              <span>California State University, East Bay</span>
+            </div>
+
+            <div className="pt-5 pb-5">
+              <h3 className="font-bold">Course</h3>
+              <p>Bsc. (Hons)</p>
+            </div>
+
+            <div>
+              <p className="font-bold pt-3">Enrolled College</p>
+              <span>California State University, East Bay</span>
+            </div>
+
+            <div className="pt-3 text-center lg:text-left">
+              <div className="pt-5">
+                <h3 className="Font-bold text-3xl pb-6">Test Score</h3>
+              </div>
+
+              <div className="lg:flex items-center">
+                <div>
+                  <div className="pb-3 lg:pl-2">
+                    <h3 className="font-bold">Ielts</h3>
+                    <p>3.0</p>
+                  </div>
+
+                  <div className="lg:pl-2">
+                    <p className="font-bold pt-3">Under Graduate</p>
+                    <span>3.0(est)</span>
+                  </div>
+                </div>
+
+                <div className="pb-3 py-4 lg:pl-20">
+                  <h3 className="font-bold">Ielts</h3>
+                  <p>3.0</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        );
+
+      case "activity":
+        return (
+          <div className="pt-8 text-center px-10 lg:text-left">
+            <div className="py-10">
+              <span className="md:flex items-center gap-5">
+                <GoDotFill className="hidden md:block" />
+                <h4>Islington Collage</h4>
+                <p className="font-bold">
+                  Important infomration about your applic....
+                </p>
+                <p>12/02/2024</p>
+              </span>
+            </div>
+            <div className="py-10">
+              <span className="md:flex items-center gap-5">
+                <GoDotFill className="hidden md:block" />
+                <h4>Islington Collage</h4>
+                <p className="font-bold">
+                  Important infomration about your applic....
+                </p>
+                <p>12/02/2024</p>
+              </span>
+            </div>
+            <div className="py-10">
+              <span className="md:flex items-center gap-5">
+                <GoDotFill className="hidden md:block" />
+                <h4>Islington Collage</h4>
+                <p className="font-bold">
+                  Important infomration about your applic....
+                </p>
+                <p>12/02/2024</p>
+              </span>
+            </div>
+
+            <div className="py-10">
+              <span className="md:flex items-center gap-5">
+                <GoDotFill className="hidden md:block"/>
+                <h4>Islington Collage</h4>
+                <p className="font-bold">
+                  Important infomration about your applic....
+                </p>
+                <p>12/02/2024</p>
+              </span>
+            </div>
+          </div>
+        );
+
+      case "collections":
+        return (
+          <div className="pt-8">
+            <h3 className="font-bold text-xl pb-4">Favortie collages</h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 ">
+              {colleges.map((college, index) => (
+                <div
+                  key={index}
+                  className="bg-white shadow-md rounded-lg overflow-hidden"
+                >
+                  <div className="relative">
+                    <Image
+                      src={college.image}
+                      alt={college.name}
+                      className="w-full h-40 object-cover rounded-lg"
+                      height={160}
+                      width={300}
+                    />
+                    <button className="absolute top-2 right-2 bg-[#007296] p-2 rounded-full shadow">
+                      <CiHeart className="text-white animate-heartbeat" />
+                    </button>
+                  </div>
+                  <div className="p-4">
+                    <h3 className="font-bold">{college.name}</h3>
+                    <p className="text-gray-600">{college.location}</p>
+                    <div className="mt-2">
+                      {college.details.map((detail, i) => (
+                        <p key={i} className="text-sm text-gray-500">
+                          {detail}
+                        </p>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        );
+      default:
+        return null;
+    }
+  };
+
   return (
     <section className="bg-gray-100">
       <div className="md:px-5">
@@ -41,11 +212,11 @@ function ProfilePage() {
                 <p>@birendra</p>
               </div>
             </div>
-            <div className="lg:flex flex-col space-y-2 justify-end md:space-y-0 md:flex-row md:space-x-2 mt-4 md:mt-0 pl-20 flex-grow">
-              <button className="bg-[#CBCBC9] text-black px-6 py-2 rounded-2xl flex items-center gap-2">
+            <div className="md:flex  gap-5  justify-center pl-20 md:pl-0 mt-4     flex-grow">
+              <button className="bg-[#CBCBC9] text-black px-6 py-2 rounded-full flex items-center gap-2">
                 <IoAddSharp className="text-xl" /> Public View
               </button>
-              <button className="bg-[#CBCBC9] text-black px-6 py-2 rounded-2xl flex items-center gap-2 ">
+              <button className="bg-[#CBCBC9] text-black px-6 py-2 rounded-full flex items-center gap-2 ">
                 <GoPencil className="text-xl" /> Edit Profile
               </button>
             </div>
@@ -58,7 +229,7 @@ function ProfilePage() {
                 {studentDetails.map((detail, index) => (
                   <p
                     key={index}
-                    className="flex gap-3 items-center pt-5 text-base pl-20 lg:pl-0"
+                    className="flex gap-3 items-center pt-5 text-base md:pl-52 pl-20 lg:pl-0"
                   >
                     {detail.icon} {detail.label}
                   </p>
@@ -80,62 +251,42 @@ function ProfilePage() {
               </div>
             </div>
 
-            <div className="pt-20 lg:px-20 flex-grow">
-              <div>
-                <div className="lg:flex grid-col-3 font-bold lg:space-x-48 text-center">
-                  <h3 className="font-bold border-b-4 border-yellow-600 lg:pb-5">
+            <div className=" ">
+              <div >
+                <div className="flex grid-col-3 font-bold lg:space-x-48 text-center px-10 py-10  justify-between">
+                  <button
+                    onClick={() => setActiveTab("academics")}
+                    className={`pb-5 ${
+                      activeTab === "academics"
+                        ? "border-b-4 border-yellow-600"
+                        : "opacity-50"
+                    }`}
+                  >
                     Academics
-                  </h3>
-                  <h3 className="font-bold text-xl opacity-50">Activity</h3>
-                  <h3 className="font-bold text-xl opacity-50">Collections</h3>
+                  </button>
+                  <button
+                    onClick={() => setActiveTab("activity")}
+                    className={`pb-5 ${
+                      activeTab === "activity"
+                        ? "border-b-4 border-yellow-600"
+                        : "opacity-50"
+                    }`}
+                  >
+                    Activity
+                  </button>
+                  <button
+                    onClick={() => setActiveTab("collections")}
+                    className={`pb-5 px-4 ${
+                      activeTab === "collections"
+                        ? "border-b-4 border-yellow-600"
+                        : "opacity-50"
+                    }`}
+                  >
+                    Collections
+                  </button>
                 </div>
 
-                <div className="pt-8 text-center lg:text-left">
-                  <div className="pt-5">
-                    <h3 className="Font-bold text-3xl pb-6 ">
-                      Currnet Academics
-                    </h3>
-                    <p className="font-bold">Enrolled Collage</p>
-                    <span>California State University, East Bay</span>
-                  </div>
-
-                  <div className="pt-5 pb-5">
-                    <h3 className="font-bold">Course</h3>
-                    <p>Bsc. (Hons)</p>
-                  </div>
-
-                  <div>
-                    <p className="font-bold pt-3">Enrolled Collage</p>
-                    <span>California State University, East Bay</span>
-                  </div>
-                </div>
-
-                <div>
-                  <div className="pt-3 text-center lg:text-left">
-                    <div className="pt-5">
-                      <h3 className="Font-bold text-3xl pb-6 ">Test Score</h3>
-                    </div>
-
-                    <div className="lg:flex items-center">
-                      <div>
-                        <div className="pb-3 lg:pl-2">
-                          <h3 className="font-bold">Ielts</h3>
-                          <p>3.0</p>
-                        </div>
-
-                        <div className="lg:pl-2">
-                          <p className="font-bold pt-3">Under Gradguate</p>
-                          <span>3.0(est)</span>
-                        </div>
-                      </div>
-
-                      <div className="pb-3 py-4 lg:pl-20">
-                        <h3 className="font-bold">Ielts</h3>
-                        <p>3.0</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                {renderContent()}
               </div>
             </div>
           </div>
