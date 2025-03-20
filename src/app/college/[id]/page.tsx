@@ -3,6 +3,7 @@
   import CollageComponents from '@/app/components/AboutCollage/collagecompoents/Page';
   import Image from 'next/image';
   import { useState } from 'react';
+  
 
 
   export default function CollegePage() {

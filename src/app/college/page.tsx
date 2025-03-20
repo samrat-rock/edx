@@ -7,37 +7,9 @@ import { FaAngleDown } from "react-icons/fa6";
 import { CiHeart } from "react-icons/ci";
 import GridButton from "../components/gridbutton/GridButton";
 import SearchButton from "../components/SearchButton/SearchButton";
+import {colleges}  from "../components/Data/Page"
 
-const colleges = [
-  { 
-    id: "boston-1",
-    name: "Boston", 
-    location: "Kamal Pokhari, Kathmandu", 
-    image: "/BostonCollege.jpg", 
-    details: ["Public", "65% Graduation rate", "01-5970012"]
-  },
-  { 
-    id: "abc-1",
-    name: "ABC College", 
-    location: "New Baneshwor, Kathmandu", 
-    image: "/BostonCollege.jpg", 
-    details: ["Private", "75% Graduation rate", "01-4467890"]
-  },
-  { 
-    id: "boston-1",
-    name: "Boston", 
-    location: "Kamal Pokhari, Kathmandu", 
-    image: "/BostonCollege.jpg", 
-    details: ["Public", "65% Graduation rate", "01-5970012"]
-  },
-  { 
-    id: "abc-1",
-    name: "ABC College", 
-    location: "New Baneshwor, Kathmandu", 
-    image: "/BostonCollege.jpg", 
-    details: ["Private", "75% Graduation rate", "01-4467890"]
-  }
-];
+
 
 export default function CollegePage() {
   const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
