@@ -1,7 +1,6 @@
 import Link from "next/link";
-import { MdKeyboardArrowRight } from "react-icons/md";
 import React from "react";
-import { navItems, extraNavItems } from "../Data/Page";
+import { navItems } from "../Data/Page";
 
 function Sidenavbar() {
   return (
@@ -17,18 +16,9 @@ function Sidenavbar() {
         ))}
       </ul>
 
-      <div className="border-t border-gray-200 my-6"></div>
+      
 
-      <ul className="space-y-4">
-        {extraNavItems.map((item, index) => (
-          <li key={index} className="flex items-center gap-4 py-3">
-            <Link href={item.path} className="hover:text-blue-500 flex items-center w-full">
-              {item.name}
-              <MdKeyboardArrowRight className="ml-auto text-xl" />
-            </Link>
-          </li>
-        ))}
-      </ul>
+    
     </div>
   );
 }

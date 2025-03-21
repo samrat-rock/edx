@@ -1,6 +1,5 @@
 import { CiHome, CiTwitter, CiHeart } from "react-icons/ci";
 import { ImProfile } from "react-icons/im";
-import { SlCalender } from "react-icons/sl";
 import { CgProfile } from "react-icons/cg";
 
 export interface Application {
@@ -98,18 +97,12 @@ export interface Application {
     { name: "Dashboard", icon: <CiHome className="text-xl" />, path: "/dashboard" },
     { name: "Application", icon: <ImProfile className="text-xl" />, path: "/application" },
     { name: "Documents", icon: <CiTwitter className="text-xl" />, path: "/documents" },
-    { name: "Calendar", icon: <SlCalender className="text-xl" />, path: "/calendar" },
     { name: "Recommendation", icon: <CiHeart className="text-xl" />, path: "/recommendation" },
     { name: "College", icon: <CgProfile className="text-xl" />, path: "/college" },
     { name: "Profile", icon: <CgProfile className="text-xl" />, path: "/profile" },
   ];
   
-  export  const extraNavItems: NavItem[] = [
-    { name: "Health and Support", path: "/healthsupport", icon: null },
-    { name: "Get Edxplor App", path: "/edxplorapp", icon: null },
-    { name: "Other links", path: "/otherlinks", icon: null },
-  ];
-
+ 
 
 
 
@@ -144,3 +137,66 @@ export interface Application {
       details: ["Private", "75% Graduation rate", "01-4467890"]
     }
   ];
+
+
+
+
+  export type FileType = "pdf" | "doc" | "txt";
+
+export interface Document {
+  name: string;
+  type: FileType;
+  size?: string;
+  uploadedOn?: string;
+}
+
+export const documents: Document[] = [
+  { 
+    name: "certificate.pdf", 
+    type: "pdf",
+    size: "2.4 MB",
+    uploadedOn: "2024-03-01"
+  },
+  { 
+    name: "letter.doc", 
+    type: "doc",
+    size: "1.2 MB",
+    uploadedOn: "2024-03-02"
+  },
+  { 
+    name: "letter.doc", 
+    type: "doc",
+    size: "1.2 MB",
+    uploadedOn: "2024-03-02"
+  },
+  { 
+    name: "letter.doc", 
+    type: "doc",
+    size: "1.2 MB",
+    uploadedOn: "2024-03-02"
+  },
+  { 
+    name: "letter.doc", 
+    type: "doc",
+    size: "1.2 MB",
+    uploadedOn: "2024-03-02"
+  },
+  { 
+    name: "letter.doc", 
+    type: "doc",
+    size: "1.2 MB",
+    uploadedOn: "2024-03-02"
+  },
+  { 
+    name: "letter.doc", 
+    type: "doc",
+    size: "1.2 MB",
+    uploadedOn: "2024-03-02"
+  },
+  { 
+    name: "letter.doc", 
+    type: "doc",
+    size: "1.2 MB",
+    uploadedOn: "2024-03-02"
+  },
+];

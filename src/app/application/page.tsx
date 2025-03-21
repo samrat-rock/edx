@@ -67,8 +67,8 @@ function Page() {
           <span className="text-xs text-gray-500 mt-1">{item.address}</span>
         </div>
       </td>
-      <td className="p-3 text-sm text-gray-600">{item.course}</td>
-      <td className="p-3 text-sm text-gray-600">{item.date}</td>
+      <td className="p-3 text-sm text-gray-600 text-nowrap">{item.course}</td>
+      <td className="p-3 text-sm text-gray-600 text-nowrap">{item.date}</td>
       <td className="p-3">
         <span
           className={`inline-flex items-center gap-1 px-3 py-1 rounded-full text-sm ${

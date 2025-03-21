@@ -26,6 +26,8 @@ const documents = [
   { name: "certificate.pdf", type: "pdf" as FileType },
   { name: "letter.doc", type: "doc" as FileType },
   { name: "documents.txt", type: "txt" as FileType },
+  
+  // ... rest of the documents array
 ];
 
 const getFileIcon = (type: FileType) => {
@@ -46,7 +48,7 @@ export default function Page() {
   const [isUploadView, setIsUploadView] = useState(false);
 
   return (
-    <section className=" bg-gray-200">
+    <section className="bg-gray-200">
       <div
         className="lg:w-8xl mx-auto bg-white shadow-lg p-6"
         style={{ marginLeft: "16px" }}
@@ -71,7 +73,7 @@ export default function Page() {
         </div>
 
         {isUploadView ? (
-          <div className="bg-white rounded-lg  p-6">
+          <div className="bg-white rounded-lg p-6">
             <div className="flex justify-between w-full mb-4 border-b border-gray-200 pb-2">
               <h4 className="text-gray-700 font-semibold text-left w-1/3">
                 File Name
@@ -86,22 +88,21 @@ export default function Page() {
               className="border-dashed border border-blue-400 w-full flex flex-col items-center justify-center 
                       p-10 rounded-lg bg-white h-[600px] text-center"
             >
-              <p className="  font-bold">
-                Drag files here
-              </p>
+              <p className="font-bold">Drag files here</p>
               <p className="py-2">or</p>
 
               <input type="file" id="+ upload file" className="hidden" />
 
               <label
                 htmlFor="fileUpload"
-                className="px-6 py-3 border border-[#007296] text-[#007296] rounded-lg  cursor-pointer"
+                className="px-6 py-3 border border-[#007296] text-[#007296] rounded-lg cursor-pointer"
               >
-                + uplaod files
+                + upload files
               </label>
             </div>
           </div>
         ) : isListView ? (
+          // Added List View Table
           <div className="rounded-lg overflow-hidden py-10">
             <div className="overflow-x-auto">
               <table className="w-full text-left border-collapse">
@@ -131,7 +132,8 @@ export default function Page() {
             </div>
           </div>
         ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 py-10">
+          // Grid View
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 py-10">
             {documents.map((doc, index) => (
               <div
                 key={index}
