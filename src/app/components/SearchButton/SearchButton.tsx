@@ -20,9 +20,10 @@ const SearchButton: React.FC<SearchButtonProps> = ({ searchQuery, setSearchQuery
         aria-label="Search for colleges"
         className="flex-grow px-3 py-2 outline-none w-full text-gray-700 placeholder-gray-500 bg-transparent"
       />
-      <button className="flex items-center justify-center   ml-2 p-2 rounded-lg  hover:bg-gray-200">
-      <IoAddOutline className="pb-1"/>  Filter
-      </button>
+      <button className="flex items-center justify-center ml-2 px-3 py-1 rounded-lg hover:bg-gray-200 transition">
+  <IoAddOutline className="pb-1" /> Filter
+</button>
+
     </div>
   );
 };

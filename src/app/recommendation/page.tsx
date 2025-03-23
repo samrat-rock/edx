@@ -105,7 +105,7 @@ function Page() {
               {viewMode === "grid" && (
                 <div className="p-4">
                   <h3 className="font-bold">{college.name}</h3>
-                  <p className="text-gray-600">{college.location}</p>
+                  <p className="text-gray-600 text-nowrap">{college.location}</p>
                 </div>
               )}  
             </div>

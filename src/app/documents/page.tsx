@@ -27,7 +27,8 @@ const documents = [
   { name: "letter.doc", type: "doc" as FileType },
   { name: "documents.txt", type: "txt" as FileType },
   
-  // ... rest of the documents array
+  
+  
 ];
 
 const getFileIcon = (type: FileType) => {
