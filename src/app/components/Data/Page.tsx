@@ -98,8 +98,10 @@ export interface Application {
     { name: "Application", icon: <ImProfile className="text-xl" />, path: "/application" },
     { name: "Documents", icon: <CiTwitter className="text-xl" />, path: "/documents" },
     { name: "Recommendation", icon: <CiHeart className="text-xl" />, path: "/recommendation" },
-    { name: "College", icon: <CgProfile className="text-xl" />, path: "/college" },
+    { name: "Colleges", icon: <CgProfile className="text-xl" />, path: "/colleges" },
     { name: "Profile", icon: <CgProfile className="text-xl" />, path: "/profile" },
+    { name: "Collageda", icon: <CgProfile className="text-xl" />, path: "/collageda" },
+    { name: "Programs", icon: <CgProfile className="text-xl" />, path: "/programs" },
   ];
   
  
@@ -200,3 +202,5 @@ export const documents: Document[] = [
     uploadedOn: "2024-03-02"
   },
 ];
+
+

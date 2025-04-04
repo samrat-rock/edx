@@ -1,162 +1,150 @@
-"use client";
-import React, { useState } from "react";
-import UploadButton from "../components/uplaodbutton/UplaodButton";
-import GridButton from "../components/gridbutton/GridButton";
-import { BsThreeDotsVertical } from "react-icons/bs";
-import {
-  FaRegFilePdf,
-  FaRegFileWord,
-  FaRegFileAlt,
-  FaRegFile,
-} from "react-icons/fa";
-import { FaChevronDown } from "react-icons/fa";
+import React from 'react';
+import SearchButton from '../components/SearchButton/SearchButton';
+import { TbFileTypePdf } from "react-icons/tb";
+import { HiOutlineDotsVertical } from "react-icons/hi";
 
-type FileType = "pdf" | "doc" | "txt";
 
-const documents = [
-  { name: "certificate.pdf", type: "pdf" as FileType },
-  { name: "letter.doc", type: "doc" as FileType },
-  { name: "documents.txt", type: "txt" as FileType },
-  { name: "certificate.pdf", type: "pdf" as FileType },
-  { name: "letter.doc", type: "doc" as FileType },
-  { name: "documents.txt", type: "txt" as FileType },
-  { name: "certificate.pdf", type: "pdf" as FileType },
-  { name: "letter.doc", type: "doc" as FileType },
-  { name: "documents.txt", type: "txt" as FileType },
-  { name: "certificate.pdf", type: "pdf" as FileType },
-  { name: "letter.doc", type: "doc" as FileType },
-  { name: "documents.txt", type: "txt" as FileType },
+interface Document {
+  id: number;
+  name: string;
+  type: string;
+  lastModified: string;
+
+  description: string;
+}
+
+const documents: Document[] = [
+  {
+    id: 1,
+    name: "High School Certificate.pdf",
+    type: "High School Certificate",
+    lastModified: "15th March, 2024",
+    
+    description: "Official academic record",
+  },
+  {
+    id: 2,
+    name: "High School Certificate.pdf",
+    type: "High School Certificate",
+    lastModified: "16th March, 2024",
   
+    description: "Professor recommendation",
+  },
+  {
+    id: 3,
+    name: "High School Certificate.pdf",
+    type: "High School Certificate",
+    lastModified: "17th March, 2024",
   
+    description: "Recent passport photo",
+  },
+  {
+    id: 4,
+    name: "High School Certificate.pdf",
+    type: "High School Certificate",
+    lastModified: "17th March, 2024",
+  
+    description: "Recent passport photo",
+  },
+  {
+    id: 5,
+    name: "High School Certificate.pdf",
+    type: "High School Certificate",
+    lastModified: "17th March, 2024",
+  
+    description: "Recent passport photo",
+  },
+ 
+  {
+    id: 6,
+    name: "High School Certificate.pdf",
+    type: "High School Certificate",
+    lastModified: "17th March, 2024",
+  
+    description: "Recent passport photo",
+  },
   
 ];
 
-const getFileIcon = (type: FileType) => {
-  switch (type) {
-    case "pdf":
-      return <FaRegFilePdf className="text-red-500" size={24} />;
-    case "doc":
-      return <FaRegFileWord className="text-blue-600" size={24} />;
-    case "txt":
-      return <FaRegFileAlt className="text-green-600" size={24} />;
-    default:
-      return <FaRegFile className="text-gray-500" size={24} />;
-  }
-};
-
-export default function Page() {
-  const [isListView, setIsListView] = useState(false);
-  const [isUploadView, setIsUploadView] = useState(false);
-
+function Page() {
   return (
-    <section className="bg-gray-200">
-      <div
-        className="lg:w-8xl mx-auto bg-white shadow-lg p-6"
-        style={{ marginLeft: "16px" }}
-      >
-        <div className="mb-6 space-y-4 lg:space-y-0 lg:flex lg:items-center lg:justify-between">
-          <h3 className="font-bold text-lg lg:pl-5 text-center">
-            {isUploadView ? "Upload Your Files" : "Your Documents"}
-          </h3>
-          <div className="space-y-4 lg:space-y-0 lg:flex lg:items-center lg:justify-end lg:gap-4 ">
-            <h4 className="flex items-center text-xl gap-2 justify-center ">
-              Sort by Name: <FaChevronDown />
-            </h4>
+    <>
+      <section className="bg-gray-100 p-4">
+        <div className="bg-white p-4 rounded-lg shadow-sm">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-2">
+              <h3 className="text-lg font-semibold">Documents</h3>
+              <p className="bg-[#F9F5FF] text-[#0295A9] rounded-full px-3 py-1 text-sm">
+                {documents.length} documents found
+              </p>
+            </div>
+            
+            <div className="flex gap-4 items-center">
+              <SearchButton />
+              <button className="bg-[#E66E19] text-white px-5 py-2 rounded text-sm font-medium">
+                + Add Document
+              </button>
+            </div>
+          </div>
 
-            <GridButton
-              setViewMode={(mode: "grid" | "list") =>
-                setIsListView(mode === "list")
-              }
-            />
-
-            <UploadButton onClick={() => setIsUploadView((prev) => !prev)} />
+          <div className="overflow-x-auto max-w-full py-5">
+            <table className="w-full min-w-max border-collapse">
+              <thead className="bg-gray-50">
+                <tr>
+                  <th className="p-3 text-left text-sm font-semibold text-gray-500">
+                    Document
+                  </th>
+                  <th className="p-3 text-left text-sm font-semibold text-gray-500 hidden md:table-cell">Type</th>
+                  <th className="p-3 text-left text-sm font-semibold text-gray-500 hidden lg:table-cell">Description</th>
+                  <th className="p-3 text-left text-sm font-semibold text-gray-500 hidden sm:table-cell">Uploaded Date</th>
+               
+                  <th className="p-3 text-left text-sm font-semibold text-gray-500">Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                {documents.map((item, index) => {
+                  const displayName = item.name.endsWith('.pdf') 
+                    ? item.name.slice(0, -4) 
+                    : item.name;
+                  
+                  return (
+                    <tr key={index} className="border-t border-gray-100 hover:bg-gray-50">
+                      <td className="p-3">
+                        <div className="flex items-center gap-3 font-bold">
+                          <div className={`w-8 h-8 rounded flex items-center  justify-center ${
+                            item.name.endsWith('.pdf') ? " text-red-500 " : 
+                            "bg-gray-50 text-gray-500"
+                          }`}>
+                            {item.name.endsWith('.pdf') ? (
+                              <TbFileTypePdf className="h-5 w-5" />
+                            ) : (
+                              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                <path fillRule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clipRule="evenodd" />
+                              </svg>
+                            )}
+                          </div>
+                          <span className="font-medium text-gray-900">{displayName}</span>
+                        </div>
+                      </td>
+                      <td className="p-3 text-sm text-gray-600 hidden md:table-cell">{item.type}</td>
+                      <td className="p-3 text-sm text-gray-600 hidden lg:table-cell">{item.description}</td>
+                      <td className="p-3 text-sm text-gray-600 hidden sm:table-cell">{item.lastModified}</td>
+                     
+                      <td className="p-3 text-center">
+                                   <button className="text-gray-600 hover:text-gray-800">
+                                     <HiOutlineDotsVertical size={18} />
+                                   </button>
+                                 </td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table> 
           </div>
         </div>
-
-        {isUploadView ? (
-          <div className="bg-white rounded-lg p-6">
-            <div className="flex justify-between w-full mb-4 border-b border-gray-200 pb-2">
-              <h4 className="text-gray-700 font-semibold text-left w-1/3">
-                File Name
-              </h4>
-              <div className="flex gap-16 text-gray-700 font-semibold text-right">
-                <h4>Size</h4>
-                <h4>Uploaded On</h4>
-              </div>
-            </div>
-
-            <div
-              className="border-dashed border border-blue-400 w-full flex flex-col items-center justify-center 
-                      p-10 rounded-lg bg-white h-[600px] text-center"
-            >
-              <p className="font-bold">Drag files here</p>
-              <p className="py-2">or</p>
-
-              <input type="file" id="+ upload file" className="hidden" />
-
-              <label
-                htmlFor="fileUpload"
-                className="px-6 py-3 border border-[#007296] text-[#007296] rounded-lg cursor-pointer"
-              >
-                + upload files
-              </label>
-            </div>
-          </div>
-        ) : isListView ? (
-          // Added List View Table
-          <div className="rounded-lg overflow-hidden py-10">
-            <div className="overflow-x-auto">
-              <table className="w-full text-left border-collapse">
-                <thead className="font-bold border-b-2 border-gray-300">
-                  <tr>
-                    <th className="py-3 px-4 text-left">File Name</th>
-                    <th className="py-2 pl-52 text-right">Size</th>
-                    <th className="py-2 px-4 text-right">Uploaded On</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {documents.map((doc, index) => (
-                    <tr
-                      key={index}
-                      className="border-b border-gray-200 hover:bg-gray-50 transition-colors"
-                    >
-                      <td className="py-2 px-4 text-left font-medium flex items-center gap-2">
-                        {getFileIcon(doc.type)}
-                        {doc.name}
-                      </td>
-                      <td className="py-1 text-right">12 MB</td>
-                      <td className="py-1 px-4 text-right">2025-03-07</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </div>
-        ) : (
-          // Grid View
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 py-10">
-            {documents.map((doc, index) => (
-              <div
-                key={index}
-                className="relative flex flex-col h-56 w-full rounded-lg shadow-lg bg-gray-200"
-              >
-                <div className="w-full py-3 px-4 flex items-center justify-between rounded-t-lg">
-                  <div className="flex items-center gap-2">
-                    {getFileIcon(doc.type)}
-                    <p className="font-semibold text-sm truncate max-w-[140px]">
-                      {doc.name}
-                    </p>
-                  </div>
-                  <button className="text-gray-500 hover:text-black transition-colors">
-                    <BsThreeDotsVertical size={18} />
-                  </button>
-                </div>
-                <div className="flex-1 bg-white m-4 rounded-lg"></div>
-              </div>
-            ))}
-          </div>
-        )}
-      </div>
-    </section>
+      </section>
+    </>
   );
 }
+
+export default Page;

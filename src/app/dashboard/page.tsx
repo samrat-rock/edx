@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import Cards from "../components/cards/cards";
 import Image from "next/image";
 import { CiHeart } from "react-icons/ci";
-import Modal from "../components/modal/Modal";
+import Modal from "../components/Modals/TestScore";
 import { colleges } from "../components/Data/Page";
 
 interface College {
@@ -119,7 +119,8 @@ function Dashboard() {
 
       </div>
 
-      <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+      <Modal open={isModalOpen} onCancel={() => setIsModalOpen(false)} />
+
     </section>
   );
 }

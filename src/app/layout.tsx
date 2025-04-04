@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 // import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import NavComponent from "./components/NavComponent/NavComponent";
-import Sidenavbar from "./components/SideNavbar/SideNavbar";
 import { Poppins } from "next/font/google"; 
+import Navbar from "./components/NavComponent/NavComponent";
+import Sidenavbar from "./components/SideNavbar/SideNavbar";
 
 
 const poppins = Poppins({
@@ -34,13 +34,21 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={` ${poppins.variable} antialiased`}>
-        <NavComponent />
-        <div className="flex min-h-screen">
-          <Sidenavbar/>
-          <main className="flex-1">{children}</main>
+    <body className={`${poppins.variable} antialiased`}>
+      <div className="flex flex-col min-h-screen">
+      
+        <Navbar />
+
+    
+        <div className="flex flex-1">
+          
+          <Sidenavbar  />
+
+          
+          <main className="flex-1 p-4">{children}</main>
         </div>
-      </body>
-    </html>
+      </div>
+    </body>
+  </html>
   );
 }

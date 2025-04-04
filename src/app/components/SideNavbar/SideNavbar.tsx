@@ -4,7 +4,7 @@ import { navItems } from "../Data/Page";
 
 function Sidenavbar() {
   return (
-    <div className="hidden md:block w- h-screen bg-white p-6">
+    <div className="hidden md:block  h-screen bg-white p-6">
       <ul className="space-y-4">
         {navItems.map((item, index) => (
           <li key={index} className="flex items-center gap-4 py-3">
