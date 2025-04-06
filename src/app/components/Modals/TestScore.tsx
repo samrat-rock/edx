@@ -21,7 +21,7 @@
         label: "PTE Test Card",
         
       },
-      {
+      { 
           value: "Duolingo Test Card",
           label: "Duolingo Test Card",
           

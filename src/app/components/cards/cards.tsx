@@ -14,7 +14,7 @@ function Cards() {
         <div className="lg:py-10 lg:pl-10 px-8 flex-grow">
           <h3 className="lg:text-4xl text-2xl font-bold">Hello, Simmons!</h3>
           <p className="text-gray-600">
-            Welcome to your dashboard! Your one-step hub for courses, progress tracking, and connections.
+            Welcome todashboard! Your one-step hub for courses, progress tracking, and connections.
             Let&apos;s start your journey to knowledge and success!
           </p>
         </div>

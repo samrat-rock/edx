@@ -110,36 +110,93 @@ export interface Application {
 
   
   export const colleges = [
-    { 
-      id: "boston-1",
-      name: "Boston", 
-      location: "Kamal Pokhari, Kathmandu", 
-      image: "/BostonCollege.jpg", 
-      details: ["Public", "65% Graduation rate", "01-5970012"]
+    {
+      name: "Kathmandu Medical College",
+      slug: "kathmandu-medical-college",
+      logo: "/EDlogo.png",
+      imageUrl: "/BostonCollege.jpg",
+      description:
+        "Kathmandu Medical College is a leading medical institution affiliated with Tribhuvan University. It provides comprehensive medical education with state-of-the-art facilities and a dedicated faculty.",
+      establishmentYear: 2010,
+      location: "Kathmandu, Nepal",
+      type: "Private Institution",
+      graduationRate: "89%",
+      phone: "9860591234",
+      email: "info@kmc.edu.np",
+      website: "www.kmc.edu.np",
+      affiliation: "Tribhuvan University",
+      programs: 23,
     },
-    { 
-      id: "abc-1",
-      name: "ABC College", 
-      location: "New Baneshwor, Kathmandu", 
-      image: "/BostonCollege.jpg", 
-      details: ["Private", "75% Graduation rate", "01-4467890"]
+    {
+      name: "Pokhara University",
+      slug: "pokhara-university",
+      logo: "/images/pokhara-university-logo.png",
+      imageUrl: "/images/pokhara-university.jpg",
+      description:
+        "Pokhara University is a well-established university in Nepal, offering a wide range of academic programs and known for its beautiful campus surrounded by natural beauty.",
+      establishmentYear: 1996,
+      location: "Pokhara, Nepal",
+      type: "Public University",
+      graduationRate: "92%",
+      phone: "061-524347",
+      email: "info@pu.edu.np",
+      website: "www.pu.edu.np",
+      affiliation: "Tribhuvan University",
+      programs: 18,
     },
-    { 
-      id: "boston-1",
-      name: "Boston", 
-      location: "Kamal Pokhari, Kathmandu", 
-      image: "/BostonCollege.jpg", 
-      details: ["Public", "65% Graduation rate", "01-5970012"]
+    {
+      name: "Kathmandu Medical College",
+      slug: "kathmandu-medical-college",
+      logo: "/EDlogo.png",
+      imageUrl: "/BostonCollege.jpg",
+      description:
+        "Kathmandu Medical College is a leading medical institution affiliated with Tribhuvan University. It provides comprehensive medical education with state-of-the-art facilities and a dedicated faculty.",
+      establishmentYear: 2010,
+      location: "Kathmandu, Nepal",
+      type: "Private Institution",
+      graduationRate: "89%",
+      phone: "9860591234",
+      email: "info@kmc.edu.np",
+      website: "www.kmc.edu.np",
+      affiliation: "Tribhuvan University",
+      programs: 23,
     },
-    { 
-      id: "abc-1",
-      name: "ABC College", 
-      location: "New Baneshwor, Kathmandu", 
-      image: "/BostonCollege.jpg", 
-      details: ["Private", "75% Graduation rate", "01-4467890"]
-    }
+    {
+      name: "Kathmandu Medical College",
+      slug: "kathmandu-medical-college",
+      logo: "/EDlogo.png",
+      imageUrl: "/BostonCollege.jpg",
+      description:
+        "Kathmandu Medical College is a leading medical institution affiliated with Tribhuvan University. It provides comprehensive medical education with state-of-the-art facilities and a dedicated faculty.",
+      establishmentYear: 2010,
+      location: "Kathmandu, Nepal",
+      type: "Private Institution",
+      graduationRate: "89%",
+      phone: "9860591234",
+      email: "info@kmc.edu.np",
+      website: "www.kmc.edu.np",
+      affiliation: "Tribhuvan University",
+      programs: 23,
+    },
+    {
+      name: "Kathmandu Medical College",
+      slug: "kathmandu-medical-college",
+      logo: "/EDlogo.png",
+      imageUrl: "/BostonCollege.jpg",
+      description:
+        "Kathmandu Medical College is a leading medical institution affiliated with Tribhuvan University. It provides comprehensive medical education with state-of-the-art facilities and a dedicated faculty.",
+      establishmentYear: 2010,
+      location: "Kathmandu, Nepal",
+      type: "Private Institution",
+      graduationRate: "89%",
+      phone: "9860591234",
+      email: "info@kmc.edu.np",
+      website: "www.kmc.edu.np",
+      affiliation: "Tribhuvan University",
+      programs: 23,
+    },
+    
   ];
-
 
 
 
